@@ -19,12 +19,9 @@ import CalculateIcon from '@mui/icons-material/Calculate';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { motorcycles } from '../data/motorcycles';
+import { dealershipData } from '../data/dealershipInfo';
 
-interface EmiCalculatorProps {
-  onApplyFinance: (modelName: string) => void;
-}
-
-export default function EmiCalculator({ onApplyFinance }: EmiCalculatorProps) {
+export default function EmiCalculator() {
   const [selectedBikeId, setSelectedBikeId] = useState<string>(motorcycles[0].id);
   const [downPaymentPercent, setDownPaymentPercent] = useState<number>(20);
   const [tenureMonths, setTenureMonths] = useState<number>(36);
@@ -56,9 +53,9 @@ export default function EmiCalculator({ onApplyFinance }: EmiCalculatorProps) {
       id="emi-calculator"
       sx={{
         py: { xs: 10, md: 14 },
-        backgroundColor: '#E8E0D2',
-        borderTop: '1px solid rgba(128, 0, 0, 0.15)',
-        borderBottom: '1px solid rgba(128, 0, 0, 0.15)',
+        backgroundColor: '#FFFFFF',
+        borderTop: '1px solid rgba(0, 0, 0, 0.08)',
+        borderBottom: '1px solid rgba(0, 0, 0, 0.08)',
         position: 'relative',
       }}
     >
@@ -68,19 +65,19 @@ export default function EmiCalculator({ onApplyFinance }: EmiCalculatorProps) {
             icon={<CalculateIcon sx={{ color: '#800000 !important' }} />}
             label="TRANSPARENT FINANCIAL PLANNING"
             sx={{
-              backgroundColor: 'rgba(128, 0, 0, 0.12)',
+              backgroundColor: 'rgba(128, 0, 0, 0.08)',
               color: '#800000',
               fontWeight: 800,
               mb: 2,
               letterSpacing: '0.08em',
-              border: '1px solid rgba(128, 0, 0, 0.3)',
+              border: '1px solid rgba(128, 0, 0, 0.2)',
             }}
           />
           <Typography
             variant="h2"
             sx={{
               fontWeight: 900,
-              color: '#291C0E',
+              color: '#0F172A',
               fontFamily: '"Outfit", sans-serif',
               fontSize: { xs: '2rem', sm: '2.8rem', md: '3.3rem' },
               mb: 2,
@@ -88,7 +85,7 @@ export default function EmiCalculator({ onApplyFinance }: EmiCalculatorProps) {
           >
             ROYAL ENFIELD <Box component="span" sx={{ color: '#800000' }}>EMI CALCULATOR</Box>
           </Typography>
-          <Typography variant="body1" sx={{ color: '#633A2C', maxWidth: '700px', mx: 'auto', fontSize: '1.05rem' }}>
+          <Typography variant="body1" sx={{ color: '#475569', maxWidth: '700px', mx: 'auto', fontSize: '1.05rem' }}>
             Plan your purchase easily. Customize down payment, loan tenure, and interest rate to compute your instant estimated monthly installment.
           </Typography>
         </Box>
@@ -100,15 +97,15 @@ export default function EmiCalculator({ onApplyFinance }: EmiCalculatorProps) {
               elevation={0}
               sx={{
                 p: { xs: 3, sm: 5 },
-                backgroundColor: '#F8F5EE',
+                backgroundColor: '#F8F9FA',
                 borderRadius: 4,
-                border: '1px solid rgba(184, 132, 44, 0.3)',
-                boxShadow: '0 10px 30px rgba(41, 28, 14, 0.04)',
+                border: '1px solid rgba(0, 0, 0, 0.08)',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
               }}
             >
               {/* Select Bike */}
               <Box sx={{ mb: 4 }}>
-                <Typography variant="subtitle1" sx={{ color: '#291C0E', fontWeight: 800, mb: 1.5 }}>
+                <Typography variant="subtitle1" sx={{ color: '#0F172A', fontWeight: 800, mb: 1.5 }}>
                   Select Royal Enfield Motorcycle
                 </Typography>
                 <TextField
@@ -118,10 +115,10 @@ export default function EmiCalculator({ onApplyFinance }: EmiCalculatorProps) {
                   onChange={(e) => setSelectedBikeId(e.target.value)}
                   sx={{
                     '& .MuiOutlinedInput-root': {
-                      backgroundColor: '#F2EDE4',
-                      color: '#291C0E',
+                      backgroundColor: '#FFFFFF',
+                      color: '#0F172A',
                       borderRadius: 3,
-                      '& fieldset': { borderColor: 'rgba(99, 58, 44, 0.3)' },
+                      '& fieldset': { borderColor: 'rgba(0, 0, 0, 0.12)' },
                       '&:hover fieldset': { borderColor: '#800000' },
                     },
                   }}
@@ -137,10 +134,10 @@ export default function EmiCalculator({ onApplyFinance }: EmiCalculatorProps) {
               {/* Down Payment Slider */}
               <Box sx={{ mb: 4 }}>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
-                  <Typography variant="body2" sx={{ color: '#633A2C', fontWeight: 600 }}>
+                  <Typography variant="body2" sx={{ color: '#475569', fontWeight: 600 }}>
                     Down Payment ({downPaymentPercent}%)
                   </Typography>
-                  <Typography variant="subtitle1" sx={{ color: '#291C0E', fontWeight: 800 }}>
+                  <Typography variant="subtitle1" sx={{ color: '#0F172A', fontWeight: 800 }}>
                     ₹{downPayment.toLocaleString('en-IN')}
                   </Typography>
                 </Box>
@@ -153,15 +150,15 @@ export default function EmiCalculator({ onApplyFinance }: EmiCalculatorProps) {
                   sx={{
                     color: '#800000',
                     '& .MuiSlider-thumb': {
-                      boxShadow: '0 0 10px rgba(128, 0, 0, 0.3)',
+                      boxShadow: '0 0 10px rgba(128, 0, 0, 0.2)',
                     },
                   }}
                 />
                 <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <Typography variant="caption" sx={{ color: '#633A2C' }}>
+                  <Typography variant="caption" sx={{ color: '#475569' }}>
                     Min: ₹{Math.round(bikePrice * 0.1).toLocaleString('en-IN')} (10%)
                   </Typography>
-                  <Typography variant="caption" sx={{ color: '#633A2C' }}>
+                  <Typography variant="caption" sx={{ color: '#475569' }}>
                     Max: ₹{Math.round(bikePrice * 0.7).toLocaleString('en-IN')} (70%)
                   </Typography>
                 </Box>
@@ -170,10 +167,10 @@ export default function EmiCalculator({ onApplyFinance }: EmiCalculatorProps) {
               {/* Loan Tenure */}
               <Box sx={{ mb: 4 }}>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1.5 }}>
-                  <Typography variant="body2" sx={{ color: '#633A2C', fontWeight: 600 }}>
+                  <Typography variant="body2" sx={{ color: '#475569', fontWeight: 600 }}>
                     Loan Tenure (Months)
                   </Typography>
-                  <Typography variant="subtitle1" sx={{ color: '#291C0E', fontWeight: 800 }}>
+                  <Typography variant="subtitle1" sx={{ color: '#0F172A', fontWeight: 800 }}>
                     {tenureMonths} Months ({tenureMonths / 12} Years)
                   </Typography>
                 </Box>
@@ -188,11 +185,11 @@ export default function EmiCalculator({ onApplyFinance }: EmiCalculatorProps) {
                         py: 1,
                         borderRadius: 2,
                         fontWeight: 700,
-                        backgroundColor: tenureMonths === t ? '#800000' : 'transparent',
-                        borderColor: tenureMonths === t ? '#800000' : 'rgba(99, 58, 44, 0.3)',
-                        color: tenureMonths === t ? '#F8F5EE' : '#291C0E',
+                        backgroundColor: tenureMonths === t ? '#800000' : '#FFFFFF',
+                        borderColor: tenureMonths === t ? '#800000' : 'rgba(0, 0, 0, 0.15)',
+                        color: tenureMonths === t ? '#FFFFFF' : '#0F172A',
                         '&:hover': {
-                          backgroundColor: tenureMonths === t ? '#633A2C' : 'rgba(128, 0, 0, 0.08)',
+                          backgroundColor: tenureMonths === t ? '#600000' : 'rgba(128, 0, 0, 0.05)',
                         },
                       }}
                     >
@@ -205,10 +202,10 @@ export default function EmiCalculator({ onApplyFinance }: EmiCalculatorProps) {
               {/* Interest Rate */}
               <Box sx={{ mb: 2 }}>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
-                  <Typography variant="body2" sx={{ color: '#633A2C', fontWeight: 600 }}>
+                  <Typography variant="body2" sx={{ color: '#475569', fontWeight: 600 }}>
                     Interest Rate (% p.a.)
                   </Typography>
-                  <Typography variant="subtitle1" sx={{ color: '#291C0E', fontWeight: 800 }}>
+                  <Typography variant="subtitle1" sx={{ color: '#0F172A', fontWeight: 800 }}>
                     {interestRate}%
                   </Typography>
                 </Box>
@@ -231,19 +228,19 @@ export default function EmiCalculator({ onApplyFinance }: EmiCalculatorProps) {
               sx={{
                 p: { xs: 3, sm: 5 },
                 height: '100%',
-                backgroundColor: '#F8F5EE',
+                backgroundColor: '#F8F9FA',
                 borderRadius: 4,
-                border: '2px solid rgba(128, 0, 0, 0.3)',
+                border: '2px solid rgba(128, 0, 0, 0.2)',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                boxShadow: '0 15px 40px rgba(41, 28, 14, 0.08)',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.04)',
               }}
             >
               <Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 3 }}>
                   <AccountBalanceWalletIcon sx={{ color: '#800000', fontSize: 28 }} />
-                  <Typography variant="h6" sx={{ fontWeight: 800, color: '#291C0E' }}>
+                  <Typography variant="h6" sx={{ fontWeight: 800, color: '#0F172A' }}>
                     Calculation Breakdown
                   </Typography>
                 </Box>
@@ -252,9 +249,9 @@ export default function EmiCalculator({ onApplyFinance }: EmiCalculatorProps) {
                 <Box
                   sx={{
                     p: 3,
-                    backgroundColor: '#F2EDE4',
+                    backgroundColor: '#FFFFFF',
                     borderRadius: 3,
-                    border: '1px solid rgba(128, 0, 0, 0.25)',
+                    border: '1px solid rgba(128, 0, 0, 0.2)',
                     textAlign: 'center',
                     mb: 4,
                   }}
@@ -266,33 +263,33 @@ export default function EmiCalculator({ onApplyFinance }: EmiCalculatorProps) {
                     variant="h2"
                     sx={{
                       fontWeight: 900,
-                      color: '#291C0E',
+                      color: '#0F172A',
                       fontFamily: '"Outfit", sans-serif',
                       my: 1,
                     }}
                   >
                     ₹{monthlyEmi.toLocaleString('en-IN')}
-                    <Typography component="span" variant="body1" sx={{ color: '#633A2C', ml: 0.5 }}>
+                    <Typography component="span" variant="body1" sx={{ color: '#475569', ml: 0.5 }}>
                       / month
                     </Typography>
                   </Typography>
-                  <Typography variant="caption" sx={{ color: '#633A2C' }}>
+                  <Typography variant="caption" sx={{ color: '#475569' }}>
                     *Subject to bank approval & credit evaluation.
                   </Typography>
                 </Box>
 
                 <Stack spacing={2} sx={{ mb: 4 }}>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography variant="body2" sx={{ color: '#633A2C' }}>
+                    <Typography variant="body2" sx={{ color: '#475569' }}>
                       Ex-Showroom Price:
                     </Typography>
-                    <Typography variant="body2" sx={{ fontWeight: 700, color: '#291C0E' }}>
+                    <Typography variant="body2" sx={{ fontWeight: 700, color: '#0F172A' }}>
                       ₹{bikePrice.toLocaleString('en-IN')}
                     </Typography>
                   </Box>
 
                   <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography variant="body2" sx={{ color: '#633A2C' }}>
+                    <Typography variant="body2" sx={{ color: '#475569' }}>
                       Down Payment Paid:
                     </Typography>
                     <Typography variant="body2" sx={{ fontWeight: 700, color: '#15803D' }}>
@@ -301,16 +298,16 @@ export default function EmiCalculator({ onApplyFinance }: EmiCalculatorProps) {
                   </Box>
 
                   <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography variant="body2" sx={{ color: '#633A2C' }}>
+                    <Typography variant="body2" sx={{ color: '#475569' }}>
                       Loan Amount Financed:
                     </Typography>
-                    <Typography variant="body2" sx={{ fontWeight: 700, color: '#291C0E' }}>
+                    <Typography variant="body2" sx={{ fontWeight: 700, color: '#0F172A' }}>
                       ₹{loanAmount.toLocaleString('en-IN')}
                     </Typography>
                   </Box>
 
                   <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography variant="body2" sx={{ color: '#633A2C' }}>
+                    <Typography variant="body2" sx={{ color: '#475569' }}>
                       Total Interest Amount:
                     </Typography>
                     <Typography variant="body2" sx={{ fontWeight: 700, color: '#800000' }}>
@@ -318,10 +315,10 @@ export default function EmiCalculator({ onApplyFinance }: EmiCalculatorProps) {
                     </Typography>
                   </Box>
 
-                  <Divider sx={{ borderColor: 'rgba(99, 58, 44, 0.15)' }} />
+                  <Divider sx={{ borderColor: 'rgba(0, 0, 0, 0.08)' }} />
 
                   <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography variant="subtitle2" sx={{ color: '#291C0E', fontWeight: 800 }}>
+                    <Typography variant="subtitle2" sx={{ color: '#0F172A', fontWeight: 800 }}>
                       Total Cost (Principal + Interest):
                     </Typography>
                     <Typography variant="subtitle2" sx={{ fontWeight: 800, color: '#800000' }}>
@@ -335,15 +332,17 @@ export default function EmiCalculator({ onApplyFinance }: EmiCalculatorProps) {
                 variant="contained"
                 size="large"
                 fullWidth
-                onClick={() => onApplyFinance(selectedBike.name)}
+                component="a"
+                href={`https://wa.me/${dealershipData.whatsapp}?text=${encodeURIComponent(`Hi Bolt Motorcycles, I would like to apply for finance for ${selectedBike.name} (Down Payment: ₹${downPayment.toLocaleString('en-IN')}, Tenure: ${tenureMonths} months, Est. EMI: ₹${monthlyEmi.toLocaleString('en-IN')}/mo).`)}`}
+                target="_blank"
                 startIcon={<CheckCircleIcon />}
                 sx={{
                   py: 1.8,
                   fontSize: '1rem',
                   fontWeight: 800,
                   backgroundColor: '#800000',
-                  color: '#F8F5EE',
-                  '&:hover': { backgroundColor: '#633A2C' },
+                  color: '#FFFFFF',
+                  '&:hover': { backgroundColor: '#600000' },
                 }}
               >
                 Apply for Low-ROI Finance

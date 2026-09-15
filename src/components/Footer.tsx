@@ -1,14 +1,11 @@
 'use client';
 
 import React from 'react';
-import { Container, Box, Typography, Grid, Link, Divider, Stack, IconButton } from '@mui/material';
+import { Container, Box, Typography, Grid, Link, Divider, Stack } from '@mui/material';
 import FlashOnIcon from '@mui/icons-material/FlashOn';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import YouTubeIcon from '@mui/icons-material/YouTube';
 import { dealershipData } from '../data/dealershipInfo';
 
 export default function Footer() {
@@ -16,11 +13,11 @@ export default function Footer() {
     <Box
       component="footer"
       sx={{
-        backgroundColor: '#E8E0D2',
+        backgroundColor: '#F8F9FA',
         pt: 8,
         pb: 4,
-        borderTop: '1px solid rgba(128, 0, 0, 0.15)',
-        color: '#633A2C',
+        borderTop: '1px solid rgba(0, 0, 0, 0.08)',
+        color: '#475569',
       }}
     >
       <Container maxWidth="xl">
@@ -33,47 +30,35 @@ export default function Footer() {
                   width: 40,
                   height: 40,
                   borderRadius: '10px',
-                  background: 'linear-gradient(135deg, #800000 0%, #633A2C 100%)',
+                  background: 'linear-gradient(135deg, #800000 0%, #A32A2A 100%)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}
               >
-                <FlashOnIcon sx={{ color: '#F8F5EE', fontSize: 26 }} />
+                <FlashOnIcon sx={{ color: '#FFFFFF', fontSize: 26 }} />
               </Box>
               <Box>
-                <Typography variant="h6" sx={{ fontWeight: 900, color: '#291C0E', letterSpacing: '0.04em' }}>
+                <Typography variant="h6" sx={{ fontWeight: 900, color: '#0F172A', letterSpacing: '0.04em' }}>
                   BOLT MOTORCYCLES
                 </Typography>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                   <VerifiedIcon sx={{ color: '#800000', fontSize: 13 }} />
-                  <Typography variant="caption" sx={{ color: '#633A2C', fontWeight: 800 }}>
+                  <Typography variant="caption" sx={{ color: '#475569', fontWeight: 800 }}>
                     Authorised RE Dealership
                   </Typography>
                 </Box>
               </Box>
             </Box>
 
-            <Typography variant="body2" sx={{ color: '#633A2C', lineHeight: 1.7, mb: 3 }}>
+            <Typography variant="body2" sx={{ color: '#475569', lineHeight: 1.7, mb: 3 }}>
               Bolt Motorcycles is an authorised Royal Enfield dealership delivering an exceptional motorcycle-buying and ownership experience since 2021. Built on process-driven excellence, customer-first service, and lifelong rider camaraderie.
             </Typography>
-
-            <Stack direction="row" spacing={1}>
-              <IconButton sx={{ color: '#800000', border: '1px solid rgba(128, 0, 0, 0.3)', '&:hover': { backgroundColor: 'rgba(128, 0, 0, 0.1)' } }} aria-label="Instagram">
-                <InstagramIcon />
-              </IconButton>
-              <IconButton sx={{ color: '#800000', border: '1px solid rgba(128, 0, 0, 0.3)', '&:hover': { backgroundColor: 'rgba(128, 0, 0, 0.1)' } }} aria-label="Facebook">
-                <FacebookIcon />
-              </IconButton>
-              <IconButton sx={{ color: '#800000', border: '1px solid rgba(128, 0, 0, 0.3)', '&:hover': { backgroundColor: 'rgba(128, 0, 0, 0.1)' } }} aria-label="YouTube">
-                <YouTubeIcon />
-              </IconButton>
-            </Stack>
           </Grid>
 
           {/* Quick Links */}
           <Grid size={{ xs: 6, md: 2 }}>
-            <Typography variant="subtitle1" sx={{ fontWeight: 800, color: '#291C0E', mb: 2 }}>
+            <Typography variant="subtitle1" sx={{ fontWeight: 800, color: '#0F172A', mb: 2 }}>
               Quick Links
             </Typography>
             <Stack spacing={1.5}>
@@ -97,7 +82,7 @@ export default function Footer() {
 
           {/* Popular Bikes */}
           <Grid size={{ xs: 6, md: 3 }}>
-            <Typography variant="subtitle1" sx={{ fontWeight: 800, color: '#291C0E', mb: 2 }}>
+            <Typography variant="subtitle1" sx={{ fontWeight: 800, color: '#0F172A', mb: 2 }}>
               Popular Models
             </Typography>
             <Stack spacing={1.5}>
@@ -121,10 +106,10 @@ export default function Footer() {
 
           {/* Direct Contact */}
           <Grid size={{ xs: 12, md: 3 }}>
-            <Typography variant="subtitle1" sx={{ fontWeight: 800, color: '#291C0E', mb: 2 }}>
+            <Typography variant="subtitle1" sx={{ fontWeight: 800, color: '#0F172A', mb: 2 }}>
               Dealership Desk
             </Typography>
-            <Typography variant="body2" sx={{ color: '#291C0E', mb: 1, fontWeight: 700 }}>
+            <Typography variant="body2" sx={{ color: '#0F172A', mb: 1, fontWeight: 700 }}>
               Bolt Motorcycles LLP
             </Typography>
             <Typography variant="body2" sx={{ mb: 1.5, fontSize: '0.88rem' }}>
@@ -145,13 +130,13 @@ export default function Footer() {
           </Grid>
         </Grid>
 
-        <Divider sx={{ borderColor: 'rgba(99, 58, 44, 0.15)', mb: 4 }} />
+        <Divider sx={{ borderColor: 'rgba(0, 0, 0, 0.08)', mb: 4 }} />
 
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, justifyContent: 'space-between', alignItems: 'center', gap: 2 }}>
-          <Typography variant="caption" sx={{ color: '#633A2C' }}>
+          <Typography variant="caption" sx={{ color: '#475569' }}>
             © {new Date().getFullYear()} Bolt Motorcycles LLP. Authorised Royal Enfield Dealership. All Rights Reserved.
           </Typography>
-          <Typography variant="caption" sx={{ color: '#633A2C' }}>
+          <Typography variant="caption" sx={{ color: '#475569' }}>
             Royal Enfield, Classic, Bullet, Hunter, Himalayan & Meteor are registered trademarks of Eicher Motors Ltd.
           </Typography>
         </Box>

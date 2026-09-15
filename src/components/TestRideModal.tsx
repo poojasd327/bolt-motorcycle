@@ -99,12 +99,12 @@ export default function TestRideModal({
       slotProps={{
         paper: {
           sx: {
-            backgroundColor: '#F2EDE4',
+            backgroundColor: '#FFFFFF',
             backgroundImage: 'none',
             borderRadius: 4,
-            border: '1px solid rgba(128, 0, 0, 0.3)',
-            boxShadow: '0 25px 60px rgba(41, 28, 14, 0.2)',
-            color: '#291C0E',
+            border: '1px solid rgba(0, 0, 0, 0.1)',
+            boxShadow: '0 25px 60px rgba(0, 0, 0, 0.15)',
+            color: '#0F172A',
           },
         },
       }}
@@ -117,7 +117,7 @@ export default function TestRideModal({
               width: 38,
               height: 38,
               borderRadius: 2,
-              backgroundColor: 'rgba(128, 0, 0, 0.1)',
+              backgroundColor: 'rgba(128, 0, 0, 0.08)',
               border: '1px solid #800000',
               display: 'flex',
               alignItems: 'center',
@@ -127,7 +127,7 @@ export default function TestRideModal({
             <TwoWheelerIcon sx={{ color: '#800000' }} />
           </Box>
           <Box>
-            <Typography variant="h6" sx={{ fontWeight: 800, color: '#291C0E' }}>
+            <Typography variant="h6" sx={{ fontWeight: 800, color: '#0F172A' }}>
               {activeTab === 'test-ride'
                 ? 'Book a Royal Enfield Test Ride'
                 : activeTab === 'quote'
@@ -139,7 +139,7 @@ export default function TestRideModal({
             </Typography>
           </Box>
         </Box>
-        <IconButton onClick={handleResetAndClose} sx={{ color: '#291C0E' }}>
+        <IconButton onClick={handleResetAndClose} sx={{ color: '#0F172A' }}>
           <CloseIcon />
         </IconButton>
       </DialogTitle>
@@ -148,19 +148,19 @@ export default function TestRideModal({
         {submitted ? (
           <Box sx={{ textAlign: 'center', py: 4 }}>
             <CheckCircleIcon sx={{ color: '#15803D', fontSize: 72, mb: 2 }} />
-            <Typography variant="h4" sx={{ fontWeight: 800, color: '#291C0E', mb: 1, fontFamily: '"Outfit", sans-serif' }}>
+            <Typography variant="h4" sx={{ fontWeight: 800, color: '#0F172A', mb: 1, fontFamily: '"Outfit", sans-serif' }}>
               Booking Confirmed!
             </Typography>
-            <Typography variant="body1" sx={{ color: '#633A2C', mb: 3 }}>
-              Thank you, <strong style={{ color: '#291C0E' }}>{name}</strong>! Our Bolt Motorcycles RE specialist will contact you shortly at <strong style={{ color: '#800000' }}>+91 {phone}</strong> to confirm your slot.
+            <Typography variant="body1" sx={{ color: '#475569', mb: 3 }}>
+              Thank you, <strong style={{ color: '#0F172A' }}>{name}</strong>! Our Bolt Motorcycles RE specialist will contact you shortly at <strong style={{ color: '#800000' }}>+91 {phone}</strong> to confirm your slot.
             </Typography>
 
             <Paper
               elevation={0}
               sx={{
                 p: 2.5,
-                backgroundColor: '#F8F5EE',
-                border: '1px solid rgba(128, 0, 0, 0.25)',
+                backgroundColor: '#F8F9FA',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
                 borderRadius: 3,
                 textAlign: 'left',
                 mb: 4,
@@ -169,13 +169,13 @@ export default function TestRideModal({
               <Typography variant="subtitle2" sx={{ color: '#800000', fontWeight: 800, mb: 1 }}>
                 Booking Summary:
               </Typography>
-              <Typography variant="body2" sx={{ color: '#291C0E' }}>
+              <Typography variant="body2" sx={{ color: '#0F172A' }}>
                 • <strong>Model:</strong> {selectedModel}
               </Typography>
-              <Typography variant="body2" sx={{ color: '#291C0E' }}>
+              <Typography variant="body2" sx={{ color: '#0F172A' }}>
                 • <strong>Preferred Slot:</strong> {preferredDate || 'Earliest Available'} at {preferredTime}
               </Typography>
-              <Typography variant="body2" sx={{ color: '#291C0E' }}>
+              <Typography variant="body2" sx={{ color: '#0F172A' }}>
                 • <strong>Location:</strong> Bolt Motorcycles Dealership
               </Typography>
             </Paper>
@@ -188,7 +188,7 @@ export default function TestRideModal({
                 py: 1.5,
                 fontWeight: 800,
                 backgroundColor: '#800000',
-                color: '#F8F5EE',
+                color: '#FFFFFF',
               }}
             >
               Done
@@ -211,8 +211,8 @@ export default function TestRideModal({
                   sx={{
                     fontWeight: 800,
                     px: 1,
-                    backgroundColor: activeTab === 'test-ride' ? '#800000' : '#F8F5EE',
-                    color: activeTab === 'test-ride' ? '#F8F5EE' : '#291C0E',
+                    backgroundColor: activeTab === 'test-ride' ? '#800000' : '#F8F9FA',
+                    color: activeTab === 'test-ride' ? '#FFFFFF' : '#0F172A',
                     border: '1px solid #800000',
                   }}
                 />
@@ -222,8 +222,8 @@ export default function TestRideModal({
                   sx={{
                     fontWeight: 800,
                     px: 1,
-                    backgroundColor: activeTab === 'quote' ? '#800000' : '#F8F5EE',
-                    color: activeTab === 'quote' ? '#F8F5EE' : '#291C0E',
+                    backgroundColor: activeTab === 'quote' ? '#800000' : '#F8F9FA',
+                    color: activeTab === 'quote' ? '#FFFFFF' : '#0F172A',
                     border: '1px solid #800000',
                   }}
                 />
@@ -233,8 +233,8 @@ export default function TestRideModal({
                   sx={{
                     fontWeight: 800,
                     px: 1,
-                    backgroundColor: activeTab === 'service' ? '#800000' : '#F8F5EE',
-                    color: activeTab === 'service' ? '#F8F5EE' : '#291C0E',
+                    backgroundColor: activeTab === 'service' ? '#800000' : '#F8F9FA',
+                    color: activeTab === 'service' ? '#FFFFFF' : '#0F172A',
                     border: '1px solid #800000',
                   }}
                 />
@@ -327,7 +327,7 @@ export default function TestRideModal({
             </Stack>
 
             <Box sx={{ mt: 4, display: 'flex', justifyContent: 'flex-end', gap: 2 }}>
-              <Button onClick={handleResetAndClose} sx={{ color: '#633A2C' }}>
+              <Button onClick={handleResetAndClose} sx={{ color: '#475569' }}>
                 Cancel
               </Button>
               <Button
@@ -339,8 +339,8 @@ export default function TestRideModal({
                   py: 1.2,
                   fontWeight: 800,
                   backgroundColor: '#800000',
-                  color: '#F8F5EE',
-                  '&:hover': { backgroundColor: '#633A2C' },
+                  color: '#FFFFFF',
+                  '&:hover': { backgroundColor: '#600000' },
                 }}
               >
                 {loading ? 'Submitting...' : 'Confirm Request'}

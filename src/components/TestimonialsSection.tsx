@@ -41,9 +41,9 @@ export default function TestimonialsSection() {
       id="reviews"
       sx={{
         py: { xs: 10, md: 14 },
-        backgroundColor: '#F2EDE4',
+        backgroundColor: '#F8F9FA',
         position: 'relative',
-        borderBottom: '1px solid rgba(128, 0, 0, 0.15)',
+        borderBottom: '1px solid rgba(0, 0, 0, 0.08)',
       }}
     >
       <Container maxWidth="xl">
@@ -52,19 +52,19 @@ export default function TestimonialsSection() {
             icon={<VerifiedIcon sx={{ color: '#800000 !important' }} />}
             label="4.9 / 5.0 RATED DEALERSHIP"
             sx={{
-              backgroundColor: 'rgba(128, 0, 0, 0.12)',
+              backgroundColor: 'rgba(128, 0, 0, 0.08)',
               color: '#800000',
               fontWeight: 800,
               mb: 2,
               letterSpacing: '0.08em',
-              border: '1px solid rgba(128, 0, 0, 0.3)',
+              border: '1px solid rgba(128, 0, 0, 0.2)',
             }}
           />
           <Typography
             variant="h2"
             sx={{
               fontWeight: 900,
-              color: '#291C0E',
+              color: '#0F172A',
               fontFamily: '"Outfit", sans-serif',
               fontSize: { xs: '2rem', sm: '2.8rem', md: '3.3rem' },
               mb: 2,
@@ -72,7 +72,7 @@ export default function TestimonialsSection() {
           >
             WHAT OUR <Box component="span" sx={{ color: '#800000' }}>RIDERS SAY</Box>
           </Typography>
-          <Typography variant="body1" sx={{ color: '#633A2C', maxWidth: '700px', mx: 'auto', fontSize: '1.05rem' }}>
+          <Typography variant="body1" sx={{ color: '#475569', maxWidth: '700px', mx: 'auto', fontSize: '1.05rem' }}>
             Customer satisfaction is at the core of our approach. Hear real experiences from our proud Royal Enfield owners at Bolt Motorcycles.
           </Typography>
         </Box>
@@ -87,16 +87,16 @@ export default function TestimonialsSection() {
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
-                  backgroundColor: '#F8F5EE',
+                  backgroundColor: '#FFFFFF',
                   borderRadius: 4,
-                  border: '1px solid rgba(184, 132, 44, 0.3)',
-                  boxShadow: '0 10px 30px rgba(41, 28, 14, 0.04)',
+                  border: '1px solid rgba(0, 0, 0, 0.08)',
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
                   position: 'relative',
                   transition: 'all 0.3s ease',
                   '&:hover': {
                     borderColor: '#800000',
                     transform: 'translateY(-6px)',
-                    boxShadow: '0 15px 35px rgba(128, 0, 0, 0.12)',
+                    boxShadow: '0 12px 32px rgba(128, 0, 0, 0.12)',
                   },
                 }}
               >
@@ -104,14 +104,14 @@ export default function TestimonialsSection() {
 
                 <Rating value={rev.rating} readOnly sx={{ color: '#800000', mb: 2 }} />
 
-                <Typography variant="body1" sx={{ color: '#291C0E', lineHeight: 1.7, mb: 4, flexGrow: 1, fontStyle: 'italic' }}>
+                <Typography variant="body1" sx={{ color: '#0F172A', lineHeight: 1.7, mb: 4, flexGrow: 1, fontStyle: 'italic' }}>
                   "{rev.comment}"
                 </Typography>
 
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, pt: 2, borderTop: '1px solid rgba(99, 58, 44, 0.12)' }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, pt: 2, borderTop: '1px solid rgba(0, 0, 0, 0.06)' }}>
                   <Avatar src={rev.avatarUrl} alt={rev.name} sx={{ width: 48, height: 48, border: '2px solid #800000' }} />
                   <Box>
-                    <Typography variant="subtitle1" sx={{ fontWeight: 800, color: '#291C0E' }}>
+                    <Typography variant="subtitle1" sx={{ fontWeight: 800, color: '#0F172A' }}>
                       {rev.name}
                     </Typography>
                     <Typography variant="caption" sx={{ color: '#800000', fontWeight: 700, display: 'block' }}>

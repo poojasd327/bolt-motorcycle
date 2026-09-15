@@ -10,37 +10,37 @@
 
 html,
 body {
-  background-color: #F4E6D2 !important;
-  color: #291C0E !important;
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
   font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
   overflow-x: hidden;
 }
 
-/* Custom Warm Earth Palette Scrollbar */
+/* Custom Light Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F4E6D2;
+  background: #F8F9FA;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #A78D78;
+  background: #CBD5E1;
   border-radius: 5px;
-  border: 2px solid #F4E6D2;
+  border: 2px solid #FFFFFF;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #6E473B;
+  background: #94A3B8;
 }
 
 /* Selection highlight */
 ::selection {
-  background: rgba(110, 71, 59, 0.2);
-  color: #291C0E;
+  background: rgba(128, 0, 0, 0.15);
+  color: #800000;
 }
 
 .MuiPaper-root {

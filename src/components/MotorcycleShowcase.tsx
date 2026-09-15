@@ -22,18 +22,11 @@ import SearchIcon from '@mui/icons-material/Search';
 import TwoWheelerIcon from '@mui/icons-material/TwoWheeler';
 import RequestQuoteIcon from '@mui/icons-material/RequestQuote';
 import { motorcycles } from '../data/motorcycles';
+import { dealershipData } from '../data/dealershipInfo';
 
 const categories = ['All', 'Roadster', 'Cruiser', 'Adventure', 'Cafe Racer'];
 
-interface MotorcycleShowcaseProps {
-  onOpenTestRide: (modelName?: string) => void;
-  onOpenQuote: (modelName?: string) => void;
-}
-
-export default function MotorcycleShowcase({
-  onOpenTestRide,
-  onOpenQuote,
-}: MotorcycleShowcaseProps) {
+export default function MotorcycleShowcase() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
@@ -52,9 +45,9 @@ export default function MotorcycleShowcase({
       id="models"
       sx={{
         py: { xs: 10, md: 14 },
-        backgroundColor: '#F2EDE4',
+        backgroundColor: '#F8F9FA',
         position: 'relative',
-        borderBottom: '1px solid rgba(128, 0, 0, 0.15)',
+        borderBottom: '1px solid rgba(0, 0, 0, 0.08)',
       }}
     >
       <Container maxWidth="xl">
@@ -63,19 +56,19 @@ export default function MotorcycleShowcase({
           <Chip
             label="EXPLORE THE THUMP"
             sx={{
-              backgroundColor: 'rgba(128, 0, 0, 0.1)',
+              backgroundColor: 'rgba(128, 0, 0, 0.08)',
               color: '#800000',
               fontWeight: 800,
               mb: 2,
               letterSpacing: '0.08em',
-              border: '1px solid rgba(128, 0, 0, 0.25)',
+              border: '1px solid rgba(128, 0, 0, 0.2)',
             }}
           />
           <Typography
             variant="h2"
             sx={{
               fontWeight: 900,
-              color: '#291C0E',
+              color: '#0F172A',
               fontFamily: '"Outfit", sans-serif',
               fontSize: { xs: '2rem', sm: '2.8rem', md: '3.3rem' },
               mb: 2,
@@ -83,7 +76,7 @@ export default function MotorcycleShowcase({
           >
             ROYAL ENFIELD <Box component="span" sx={{ color: '#800000' }}>MOTORCYCLE LINEUP</Box>
           </Typography>
-          <Typography variant="body1" sx={{ color: '#633A2C', maxWidth: '700px', mx: 'auto', fontSize: '1.05rem' }}>
+          <Typography variant="body1" sx={{ color: '#475569', maxWidth: '700px', mx: 'auto', fontSize: '1.05rem' }}>
             Discover the iconic machine crafted for your riding style. Experience unmatched character, power, and thumping legacy at Bolt Motorcycles.
           </Typography>
         </Box>
@@ -97,11 +90,11 @@ export default function MotorcycleShowcase({
             alignItems: 'center',
             gap: 3,
             mb: 6,
-            backgroundColor: '#F8F5EE',
+            backgroundColor: '#FFFFFF',
             p: 2,
             borderRadius: 4,
-            border: '1px solid rgba(128, 0, 0, 0.2)',
-            boxShadow: '0 8px 25px rgba(41, 28, 14, 0.05)',
+            border: '1px solid rgba(0, 0, 0, 0.08)',
+            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
           }}
         >
           {/* Category Tabs */}
@@ -117,7 +110,7 @@ export default function MotorcycleShowcase({
                 borderRadius: '3px',
               },
               '& .MuiTab-root': {
-                color: '#291C0E',
+                color: '#0F172A',
                 fontWeight: 700,
                 '&.Mui-selected': {
                   color: '#800000',
@@ -145,12 +138,12 @@ export default function MotorcycleShowcase({
                 ),
                 sx: {
                   borderRadius: 25,
-                  backgroundColor: '#F2EDE4',
-                  color: '#291C0E',
+                  backgroundColor: '#F8F9FA',
+                  color: '#0F172A',
                   width: { xs: '100%', sm: 260 },
                   fontSize: '0.9rem',
                   '& fieldset': {
-                    borderColor: 'rgba(99, 58, 44, 0.3)',
+                    borderColor: 'rgba(0, 0, 0, 0.12)',
                   },
                   '&:hover fieldset': {
                     borderColor: '#800000 !important',
@@ -172,12 +165,12 @@ export default function MotorcycleShowcase({
                   flexDirection: 'column',
                   position: 'relative',
                   overflow: 'hidden',
-                  backgroundColor: '#F8F5EE',
-                  border: '1px solid rgba(184, 132, 44, 0.3)',
-                  boxShadow: '0 10px 30px rgba(41, 28, 14, 0.05)',
+                  backgroundColor: '#FFFFFF',
+                  border: '1px solid rgba(0, 0, 0, 0.08)',
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
                   '&:hover': {
                     borderColor: '#800000',
-                    boxShadow: '0 20px 40px rgba(128, 0, 0, 0.15)',
+                    boxShadow: '0 12px 32px rgba(128, 0, 0, 0.12)',
                   },
                   '&:hover .bike-img': {
                     transform: 'scale(1.06)',
@@ -203,10 +196,10 @@ export default function MotorcycleShowcase({
                       label={bike.category}
                       size="small"
                       sx={{
-                        backgroundColor: '#F2EDE4',
-                        color: '#291C0E',
+                        backgroundColor: '#F1F5F9',
+                        color: '#0F172A',
                         fontWeight: 800,
-                        border: '1px solid rgba(99, 58, 44, 0.3)',
+                        border: '1px solid rgba(0, 0, 0, 0.08)',
                       }}
                     />
                     {bike.featured && (
@@ -215,7 +208,7 @@ export default function MotorcycleShowcase({
                         size="small"
                         sx={{
                           backgroundColor: '#800000',
-                          color: '#F8F5EE',
+                          color: '#FFFFFF',
                           fontWeight: 800,
                         }}
                       />
@@ -231,7 +224,7 @@ export default function MotorcycleShowcase({
                       left: 0,
                       p: 1.5,
                       background:
-                        'linear-gradient(to top, rgba(248,245,238,0.95) 0%, rgba(248,245,238,0) 100%)',
+                        'linear-gradient(to top, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0) 100%)',
                       display: 'flex',
                       justifyContent: 'flex-end',
                     }}
@@ -247,14 +240,14 @@ export default function MotorcycleShowcase({
 
                 {/* Content */}
                 <CardContent sx={{ p: 3, flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
-                  <Typography variant="h5" sx={{ fontWeight: 800, color: '#291C0E', mb: 0.5 }}>
+                  <Typography variant="h5" sx={{ fontWeight: 800, color: '#0F172A', mb: 0.5 }}>
                     {bike.name}
                   </Typography>
-                  <Typography variant="caption" sx={{ color: '#633A2C', fontWeight: 700, mb: 2, display: 'block' }}>
+                  <Typography variant="caption" sx={{ color: '#475569', fontWeight: 700, mb: 2, display: 'block' }}>
                     "{bike.tagline}"
                   </Typography>
 
-                  <Typography variant="body2" sx={{ color: '#633A2C', mb: 3, fontSize: '0.88rem', flexGrow: 1 }}>
+                  <Typography variant="body2" sx={{ color: '#475569', mb: 3, fontSize: '0.88rem', flexGrow: 1 }}>
                     {bike.description}
                   </Typography>
 
@@ -264,15 +257,15 @@ export default function MotorcycleShowcase({
                       <Box
                         sx={{
                           p: 1,
-                          backgroundColor: '#F2EDE4',
+                          backgroundColor: '#F8F9FA',
                           borderRadius: 2,
-                          border: '1px solid rgba(99, 58, 44, 0.15)',
+                          border: '1px solid rgba(0, 0, 0, 0.06)',
                         }}
                       >
-                        <Typography variant="caption" sx={{ color: '#633A2C', display: 'block' }}>
+                        <Typography variant="caption" sx={{ color: '#475569', display: 'block' }}>
                           Engine
                         </Typography>
-                        <Typography variant="body2" sx={{ fontWeight: 800, color: '#291C0E' }}>
+                        <Typography variant="body2" sx={{ fontWeight: 800, color: '#0F172A' }}>
                           {bike.displacement}
                         </Typography>
                       </Box>
@@ -282,15 +275,15 @@ export default function MotorcycleShowcase({
                       <Box
                         sx={{
                           p: 1,
-                          backgroundColor: '#F2EDE4',
+                          backgroundColor: '#F8F9FA',
                           borderRadius: 2,
-                          border: '1px solid rgba(99, 58, 44, 0.15)',
+                          border: '1px solid rgba(0, 0, 0, 0.06)',
                         }}
                       >
-                        <Typography variant="caption" sx={{ color: '#633A2C', display: 'block' }}>
+                        <Typography variant="caption" sx={{ color: '#475569', display: 'block' }}>
                           Power
                         </Typography>
-                        <Typography variant="body2" sx={{ fontWeight: 800, color: '#291C0E' }}>
+                        <Typography variant="body2" sx={{ fontWeight: 800, color: '#0F172A' }}>
                           {bike.power.split('@')[0]}
                         </Typography>
                       </Box>
@@ -299,7 +292,7 @@ export default function MotorcycleShowcase({
 
                   {/* Colors Swatches */}
                   <Box sx={{ mb: 3 }}>
-                    <Typography variant="caption" sx={{ color: '#633A2C', display: 'block', mb: 1 }}>
+                    <Typography variant="caption" sx={{ color: '#475569', display: 'block', mb: 1 }}>
                       Available Color Themes:
                     </Typography>
                     <Stack direction="row" spacing={1}>
@@ -311,7 +304,7 @@ export default function MotorcycleShowcase({
                               height: 22,
                               borderRadius: '50%',
                               backgroundColor: c.hex,
-                              border: '2px solid rgba(41, 28, 14, 0.3)',
+                              border: '2px solid rgba(0, 0, 0, 0.2)',
                               cursor: 'pointer',
                               transition: 'transform 0.2s ease',
                               '&:hover': {
@@ -330,27 +323,31 @@ export default function MotorcycleShowcase({
                     <Button
                       variant="contained"
                       fullWidth
+                      component="a"
+                      href={`https://wa.me/${dealershipData.whatsapp}?text=${encodeURIComponent(`Hi Bolt Motorcycles, I would like to book a test ride for ${bike.name}.`)}`}
+                      target="_blank"
                       startIcon={<TwoWheelerIcon />}
-                      onClick={() => onOpenTestRide(bike.name)}
                       sx={{
                         py: 1.2,
                         fontSize: '0.85rem',
                         backgroundColor: '#800000',
-                        color: '#F8F5EE',
-                        '&:hover': { backgroundColor: '#633A2C' },
+                        color: '#FFFFFF',
+                        '&:hover': { backgroundColor: '#600000' },
                       }}
                     >
                       Book Test Ride
                     </Button>
                     <Button
                       variant="outlined"
-                      onClick={() => onOpenQuote(bike.name)}
+                      component="a"
+                      href={`https://wa.me/${dealershipData.whatsapp}?text=${encodeURIComponent(`Hi Bolt Motorcycles, I would like to get an on-road price quote for ${bike.name}.`)}`}
+                      target="_blank"
                       sx={{
                         borderColor: '#800000',
                         color: '#800000',
                         minWidth: 48,
                         px: 1.5,
-                        '&:hover': { backgroundColor: 'rgba(128, 0, 0, 0.08)', borderColor: '#633A2C' },
+                        '&:hover': { backgroundColor: 'rgba(128, 0, 0, 0.05)', borderColor: '#600000' },
                       }}
                       aria-label="Get Quote"
                     >

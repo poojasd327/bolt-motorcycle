@@ -6,11 +6,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import TwoWheelerIcon from '@mui/icons-material/TwoWheeler';
 import { dealershipData } from '../data/dealershipInfo';
 
-interface FloatingActionsProps {
-  onOpenTestRide: () => void;
-}
-
-export default function FloatingActions({ onOpenTestRide }: FloatingActionsProps) {
+export default function FloatingActions() {
   return (
     <Box
       sx={{
@@ -25,19 +21,20 @@ export default function FloatingActions({ onOpenTestRide }: FloatingActionsProps
       }}
     >
       {/* Test Ride Floating Action */}
-      <Tooltip title="Book a Test Ride" placement="left" arrow>
+      <Tooltip title="Book a Test Ride on WhatsApp" placement="left" arrow>
         <Fab
           variant="extended"
-          onClick={onOpenTestRide}
+          component="a"
+          href={`https://wa.me/${dealershipData.whatsapp}?text=${encodeURIComponent('Hi Bolt Motorcycles, I would like to book a test ride for a Royal Enfield bike.')}`}
+          target="_blank"
           sx={{
             fontWeight: 800,
             px: 2.5,
-            boxShadow: '0 8px 25px rgba(0, 0, 0, 0.5)',
+            boxShadow: '0 8px 25px rgba(128, 0, 0, 0.3)',
             backgroundColor: '#800000',
-            color: '#E0D6B8',
-            border: '1px solid #B8842C',
+            color: '#FFFFFF',
             '&:hover': {
-              backgroundColor: '#633A2C',
+              backgroundColor: '#600000',
               transform: 'scale(1.05)',
             },
           }}
@@ -55,7 +52,7 @@ export default function FloatingActions({ onOpenTestRide }: FloatingActionsProps
           target="_blank"
           sx={{
             backgroundColor: '#25D366',
-            color: '#E0D6B8',
+            color: '#FFFFFF',
             boxShadow: '0 8px 25px rgba(37, 211, 102, 0.4)',
             '&:hover': {
               backgroundColor: '#1EBE5D',

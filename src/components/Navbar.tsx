@@ -22,11 +22,7 @@ import FlashOnIcon from '@mui/icons-material/FlashOn';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import { dealershipData } from '../data/dealershipInfo';
 
-interface NavbarProps {
-  onOpenTestRide: (modelName?: string) => void;
-}
-
-export default function Navbar({ onOpenTestRide }: NavbarProps) {
+export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -56,13 +52,13 @@ export default function Navbar({ onOpenTestRide }: NavbarProps) {
       position="fixed"
       sx={{
         background: scrolled
-          ? 'rgba(242, 237, 228, 0.95)'
-          : 'linear-gradient(to bottom, rgba(242, 237, 228, 0.98), rgba(242, 237, 228, 0.88))',
+          ? 'rgba(255, 255, 255, 0.95)'
+          : 'rgba(255, 255, 255, 0.88)',
         backdropFilter: 'blur(16px)',
         borderBottom: scrolled
-          ? '1px solid rgba(128, 0, 0, 0.2)'
-          : '1px solid rgba(99, 58, 44, 0.12)',
-        boxShadow: scrolled ? '0 8px 30px rgba(41, 28, 14, 0.08)' : 'none',
+          ? '1px solid rgba(0, 0, 0, 0.08)'
+          : '1px solid rgba(0, 0, 0, 0.05)',
+        boxShadow: scrolled ? '0 4px 20px rgba(0, 0, 0, 0.06)' : 'none',
         transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
         zIndex: (theme) => theme.zIndex.drawer + 1,
       }}
@@ -76,14 +72,14 @@ export default function Navbar({ onOpenTestRide }: NavbarProps) {
                 width: 44,
                 height: 44,
                 borderRadius: '12px',
-                background: 'linear-gradient(135deg, #800000 0%, #633A2C 100%)',
+                background: 'linear-gradient(135deg, #800000 0%, #A32A2A 100%)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                boxShadow: '0 4px 15px rgba(128, 0, 0, 0.3)',
+                boxShadow: '0 4px 15px rgba(128, 0, 0, 0.25)',
               }}
             >
-              <FlashOnIcon sx={{ color: '#F8F5EE', fontSize: 28 }} />
+              <FlashOnIcon sx={{ color: '#FFFFFF', fontSize: 28 }} />
             </Box>
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -94,7 +90,7 @@ export default function Navbar({ onOpenTestRide }: NavbarProps) {
                   sx={{
                     fontWeight: 900,
                     letterSpacing: '0.04em',
-                    color: '#291C0E',
+                    color: '#0F172A',
                     textDecoration: 'none',
                     fontSize: { xs: '1.25rem', md: '1.45rem' },
                     textTransform: 'uppercase',
@@ -108,7 +104,7 @@ export default function Navbar({ onOpenTestRide }: NavbarProps) {
                 <Typography
                   variant="caption"
                   sx={{
-                    color: '#633A2C',
+                    color: '#475569',
                     fontWeight: 800,
                     letterSpacing: '0.04em',
                     fontSize: '0.68rem',
@@ -129,7 +125,7 @@ export default function Navbar({ onOpenTestRide }: NavbarProps) {
                 component="a"
                 href={item.href}
                 sx={{
-                  color: '#291C0E',
+                  color: '#0F172A',
                   textDecoration: 'none',
                   fontWeight: 700,
                   fontSize: '0.95rem',
@@ -160,37 +156,21 @@ export default function Navbar({ onOpenTestRide }: NavbarProps) {
           </Box>
 
           {/* Action CTAs */}
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 2 }}>
-            <Button
-              component="a"
-              href={`tel:${dealershipData.phoneRaw}`}
-              startIcon={<PhoneIcon sx={{ color: '#800000' }} />}
-              sx={{
-                color: '#291C0E',
-                borderColor: 'rgba(128, 0, 0, 0.4)',
-                backgroundColor: 'rgba(248, 245, 238, 0.8)',
-                '&:hover': {
-                  backgroundColor: 'rgba(128, 0, 0, 0.08)',
-                  borderColor: '#800000',
-                },
-                fontSize: '0.88rem',
-              }}
-            >
-              {dealershipData.phone}
-            </Button>
-
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
             <Button
               variant="contained"
-              onClick={() => onOpenTestRide()}
+              component="a"
+              href={`https://wa.me/${dealershipData.whatsapp}?text=Hi%20Bolt%20Motorcycles,%20I%20would%20like%20to%20book%20a%20test%20ride.`}
+              target="_blank"
               startIcon={<TwoWheelerIcon />}
               sx={{
                 px: 3,
                 py: 1.2,
                 fontSize: '0.9rem',
                 backgroundColor: '#800000',
-                color: '#F8F5EE',
+                color: '#FFFFFF',
                 '&:hover': {
-                  backgroundColor: '#633A2C',
+                  backgroundColor: '#600000',
                 },
               }}
             >
@@ -218,7 +198,7 @@ export default function Navbar({ onOpenTestRide }: NavbarProps) {
               aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
-              sx={{ color: '#291C0E', ml: 0.5 }}
+              sx={{ color: '#0F172A', ml: 0.5 }}
             >
               <MenuIcon />
             </IconButton>
@@ -235,9 +215,9 @@ export default function Navbar({ onOpenTestRide }: NavbarProps) {
           paper: {
             sx: {
               width: 280,
-              backgroundColor: '#F2EDE4',
+              backgroundColor: '#FFFFFF',
               backgroundImage: 'none',
-              borderLeft: '1px solid rgba(128, 0, 0, 0.2)',
+              borderLeft: '1px solid rgba(0, 0, 0, 0.08)',
               p: 2.5,
             },
           },
@@ -262,10 +242,10 @@ export default function Navbar({ onOpenTestRide }: NavbarProps) {
               sx={{
                 borderRadius: 2,
                 mb: 1,
-                color: '#291C0E',
+                color: '#0F172A',
                 textDecoration: 'none',
                 '&:hover': {
-                  backgroundColor: 'rgba(128, 0, 0, 0.1)',
+                  backgroundColor: 'rgba(128, 0, 0, 0.08)',
                   color: '#800000',
                 },
               }}
@@ -284,14 +264,14 @@ export default function Navbar({ onOpenTestRide }: NavbarProps) {
           <Button
             variant="contained"
             fullWidth
-            onClick={() => {
-              handleDrawerToggle();
-              onOpenTestRide();
-            }}
+            component="a"
+            href={`https://wa.me/${dealershipData.whatsapp}?text=Hi%20Bolt%20Motorcycles,%20I%20would%20like%20to%20book%20a%20test%20ride.`}
+            target="_blank"
+            onClick={handleDrawerToggle}
             startIcon={<TwoWheelerIcon />}
             sx={{
               backgroundColor: '#800000',
-              color: '#F8F5EE',
+              color: '#FFFFFF',
             }}
           >
             Book Test Ride

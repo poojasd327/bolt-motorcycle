@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Box } from '@mui/material';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
+import StatsSection from '@/components/StatsSection';
 import MotorcycleShowcase from '@/components/MotorcycleShowcase';
 import AboutSection from '@/components/AboutSection';
 import ServicesSection from '@/components/ServicesSection';
@@ -11,50 +12,31 @@ import EmiCalculator from '@/components/EmiCalculator';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
-import TestRideModal from '@/components/TestRideModal';
 import FloatingActions from '@/components/FloatingActions';
 
 export default function Home() {
-  const [testRideModalOpen, setTestRideModalOpen] = useState(false);
-  const [selectedModelForModal, setSelectedModelForModal] = useState('');
-  const [modalTab, setModalTab] = useState<'test-ride' | 'quote' | 'service'>('test-ride');
-
-  const handleOpenTestRide = (modelName?: string) => {
-    if (modelName) setSelectedModelForModal(modelName);
-    setModalTab('test-ride');
-    setTestRideModalOpen(true);
-  };
-
-  const handleOpenQuote = (modelName?: string) => {
-    if (modelName) setSelectedModelForModal(modelName);
-    setModalTab('quote');
-    setTestRideModalOpen(true);
-  };
-
-  const handleOpenService = () => {
-    setModalTab('service');
-    setTestRideModalOpen(true);
-  };
-
   return (
-    <Box component="main" sx={{ minHeight: '100vh', backgroundColor: '#0A0B0E', color: '#F0F2F5' }}>
+    <Box component="main" sx={{ minHeight: '100vh', backgroundColor: '#FFFFFF', color: '#0F172A' }}>
       {/* Sticky Glassmorphic Navbar */}
-      <Navbar onOpenTestRide={handleOpenTestRide} />
+      <Navbar />
 
       {/* Hero Section */}
-      <HeroSection onOpenTestRide={handleOpenTestRide} />
+      <HeroSection />
+
+      {/* Standalone Animated Stats Section */}
+      <StatsSection />
 
       {/* Motorcycle Showcase Fleet */}
-      <MotorcycleShowcase onOpenTestRide={handleOpenTestRide} onOpenQuote={handleOpenQuote} />
+      <MotorcycleShowcase />
 
       {/* About Bolt Motorcycles */}
       <AboutSection />
 
       {/* Services & Workshop */}
-      <ServicesSection onOpenServiceAppointment={handleOpenService} onOpenTestRide={handleOpenTestRide} />
+      <ServicesSection />
 
       {/* Interactive EMI Calculator */}
-      <EmiCalculator onApplyFinance={(model) => handleOpenQuote(model)} />
+      <EmiCalculator />
 
       {/* Testimonials */}
       <TestimonialsSection />
@@ -65,16 +47,8 @@ export default function Home() {
       {/* Footer */}
       <Footer />
 
-      {/* Test Ride & Quote Modal */}
-      <TestRideModal
-        open={testRideModalOpen}
-        onClose={() => setTestRideModalOpen(false)}
-        initialModel={selectedModelForModal}
-        initialTab={modalTab}
-      />
-
       {/* Floating Action Buttons */}
-      <FloatingActions onOpenTestRide={() => handleOpenTestRide()} />
+      <FloatingActions />
     </Box>
   );
 }

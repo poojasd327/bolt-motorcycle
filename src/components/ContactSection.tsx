@@ -48,9 +48,9 @@ export default function ContactSection() {
       id="contact"
       sx={{
         py: { xs: 10, md: 14 },
-        backgroundColor: '#E8E0D2',
+        backgroundColor: '#FFFFFF',
         position: 'relative',
-        borderTop: '1px solid rgba(128, 0, 0, 0.15)',
+        borderTop: '1px solid rgba(0, 0, 0, 0.08)',
       }}
     >
       <Container maxWidth="xl">
@@ -59,19 +59,19 @@ export default function ContactSection() {
             icon={<PhoneIcon sx={{ color: '#800000 !important' }} />}
             label="WE ARE HERE TO HELP"
             sx={{
-              backgroundColor: 'rgba(128, 0, 0, 0.12)',
+              backgroundColor: 'rgba(128, 0, 0, 0.08)',
               color: '#800000',
               fontWeight: 800,
               mb: 2,
               letterSpacing: '0.08em',
-              border: '1px solid rgba(128, 0, 0, 0.3)',
+              border: '1px solid rgba(128, 0, 0, 0.2)',
             }}
           />
           <Typography
             variant="h2"
             sx={{
               fontWeight: 900,
-              color: '#291C0E',
+              color: '#0F172A',
               fontFamily: '"Outfit", sans-serif',
               fontSize: { xs: '2rem', sm: '2.8rem', md: '3.3rem' },
               mb: 2,
@@ -79,7 +79,7 @@ export default function ContactSection() {
           >
             CONNECT WITH <Box component="span" sx={{ color: '#800000' }}>BOLT MOTORCYCLES</Box>
           </Typography>
-          <Typography variant="body1" sx={{ color: '#633A2C', maxWidth: '700px', mx: 'auto', fontSize: '1.05rem' }}>
+          <Typography variant="body1" sx={{ color: '#475569', maxWidth: '700px', mx: 'auto', fontSize: '1.05rem' }}>
             Have questions about buying a Royal Enfield, booking a service appointment, or pricing? Reach out to our team directly.
           </Typography>
         </Box>
@@ -92,17 +92,17 @@ export default function ContactSection() {
               sx={{
                 p: { xs: 3, sm: 5 },
                 height: '100%',
-                backgroundColor: '#F8F5EE',
+                backgroundColor: '#F8F9FA',
                 borderRadius: 4,
-                border: '1px solid rgba(184, 132, 44, 0.3)',
-                boxShadow: '0 10px 30px rgba(41, 28, 14, 0.04)',
+                border: '1px solid rgba(0, 0, 0, 0.08)',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
               }}
             >
               <Box>
-                <Typography variant="h5" sx={{ fontWeight: 800, color: '#291C0E', mb: 1 }}>
+                <Typography variant="h5" sx={{ fontWeight: 800, color: '#0F172A', mb: 1 }}>
                   Bolt Motorcycles Dealership
                 </Typography>
                 <Typography variant="body2" sx={{ color: '#800000', fontWeight: 700, mb: 4 }}>
@@ -116,14 +116,14 @@ export default function ContactSection() {
                       sx={{
                         p: 1.2,
                         borderRadius: 2,
-                        backgroundColor: 'rgba(128, 0, 0, 0.1)',
-                        border: '1px solid rgba(128, 0, 0, 0.25)',
+                        backgroundColor: 'rgba(128, 0, 0, 0.08)',
+                        border: '1px solid rgba(128, 0, 0, 0.2)',
                       }}
                     >
                       <PhoneIcon sx={{ color: '#800000' }} />
                     </Box>
                     <Box>
-                      <Typography variant="caption" sx={{ color: '#633A2C', display: 'block' }}>
+                      <Typography variant="caption" sx={{ color: '#475569', display: 'block' }}>
                         Call Showroom / Service Hotline
                       </Typography>
                       <Typography
@@ -131,7 +131,7 @@ export default function ContactSection() {
                         component="a"
                         href={`tel:${dealershipData.phoneRaw}`}
                         sx={{
-                          color: '#291C0E',
+                          color: '#0F172A',
                           fontWeight: 800,
                           textDecoration: 'none',
                           '&:hover': { color: '#800000' },
@@ -148,14 +148,14 @@ export default function ContactSection() {
                       sx={{
                         p: 1.2,
                         borderRadius: 2,
-                        backgroundColor: 'rgba(128, 0, 0, 0.1)',
-                        border: '1px solid rgba(128, 0, 0, 0.25)',
+                        backgroundColor: 'rgba(128, 0, 0, 0.08)',
+                        border: '1px solid rgba(128, 0, 0, 0.2)',
                       }}
                     >
                       <EmailIcon sx={{ color: '#800000' }} />
                     </Box>
                     <Box>
-                      <Typography variant="caption" sx={{ color: '#633A2C', display: 'block' }}>
+                      <Typography variant="caption" sx={{ color: '#475569', display: 'block' }}>
                         Official Email
                       </Typography>
                       <Typography
@@ -163,7 +163,7 @@ export default function ContactSection() {
                         component="a"
                         href={`mailto:${dealershipData.email}`}
                         sx={{
-                          color: '#291C0E',
+                          color: '#0F172A',
                           fontWeight: 700,
                           textDecoration: 'none',
                           '&:hover': { color: '#800000' },
@@ -180,20 +180,20 @@ export default function ContactSection() {
                       sx={{
                         p: 1.2,
                         borderRadius: 2,
-                        backgroundColor: 'rgba(128, 0, 0, 0.1)',
-                        border: '1px solid rgba(128, 0, 0, 0.25)',
+                        backgroundColor: 'rgba(128, 0, 0, 0.08)',
+                        border: '1px solid rgba(128, 0, 0, 0.2)',
                       }}
                     >
                       <AccessTimeIcon sx={{ color: '#800000' }} />
                     </Box>
                     <Box>
-                      <Typography variant="caption" sx={{ color: '#633A2C', display: 'block' }}>
+                      <Typography variant="caption" sx={{ color: '#475569', display: 'block' }}>
                         Showroom & Workshop Timings
                       </Typography>
-                      <Typography variant="body2" sx={{ color: '#291C0E', fontWeight: 600 }}>
+                      <Typography variant="body2" sx={{ color: '#0F172A', fontWeight: 600 }}>
                         {dealershipData.businessHours.weekdays}
                       </Typography>
-                      <Typography variant="body2" sx={{ color: '#633A2C' }}>
+                      <Typography variant="body2" sx={{ color: '#475569' }}>
                         {dealershipData.businessHours.sunday}
                       </Typography>
                     </Box>
@@ -205,20 +205,20 @@ export default function ContactSection() {
                       sx={{
                         p: 1.2,
                         borderRadius: 2,
-                        backgroundColor: 'rgba(128, 0, 0, 0.1)',
-                        border: '1px solid rgba(128, 0, 0, 0.25)',
+                        backgroundColor: 'rgba(128, 0, 0, 0.08)',
+                        border: '1px solid rgba(128, 0, 0, 0.2)',
                       }}
                     >
                       <LocationOnIcon sx={{ color: '#800000' }} />
                     </Box>
                     <Box>
-                      <Typography variant="caption" sx={{ color: '#633A2C', display: 'block' }}>
+                      <Typography variant="caption" sx={{ color: '#475569', display: 'block' }}>
                         Showroom Location
                       </Typography>
-                      <Typography variant="body2" sx={{ color: '#291C0E', fontWeight: 600 }}>
+                      <Typography variant="body2" sx={{ color: '#0F172A', fontWeight: 600 }}>
                         {dealershipData.address.street}, {dealershipData.address.city}
                       </Typography>
-                      <Typography variant="caption" sx={{ color: '#633A2C' }}>
+                      <Typography variant="caption" sx={{ color: '#475569' }}>
                         {dealershipData.address.landmark} • {dealershipData.address.pincode}
                       </Typography>
                     </Box>
@@ -237,7 +237,7 @@ export default function ContactSection() {
                 sx={{
                   py: 1.6,
                   backgroundColor: '#25D366',
-                  color: '#F8F5EE',
+                  color: '#FFFFFF',
                   fontWeight: 800,
                   '&:hover': { backgroundColor: '#1EBE5D' },
                 }}
@@ -253,16 +253,16 @@ export default function ContactSection() {
               elevation={0}
               sx={{
                 p: { xs: 3, sm: 5 },
-                backgroundColor: '#F8F5EE',
+                backgroundColor: '#F8F9FA',
                 borderRadius: 4,
-                border: '1px solid rgba(184, 132, 44, 0.3)',
-                boxShadow: '0 10px 30px rgba(41, 28, 14, 0.04)',
+                border: '1px solid rgba(0, 0, 0, 0.08)',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
               }}
             >
-              <Typography variant="h5" sx={{ fontWeight: 800, color: '#291C0E', mb: 1 }}>
+              <Typography variant="h5" sx={{ fontWeight: 800, color: '#0F172A', mb: 1 }}>
                 Send Us a Message
               </Typography>
-              <Typography variant="body2" sx={{ color: '#633A2C', mb: 4 }}>
+              <Typography variant="body2" sx={{ color: '#475569', mb: 4 }}>
                 Fill out the form below and our customer relationship team will reach out within 2 hours.
               </Typography>
 
@@ -270,9 +270,9 @@ export default function ContactSection() {
                 <Alert
                   icon={<CheckCircleIcon fontSize="inherit" sx={{ color: '#15803D' }} />}
                   severity="success"
-                  sx={{ p: 3, borderRadius: 3, backgroundColor: 'rgba(21, 128, 61, 0.1)', color: '#291C0E' }}
+                  sx={{ p: 3, borderRadius: 3, backgroundColor: 'rgba(21, 128, 61, 0.08)', color: '#0F172A' }}
                 >
-                  <Typography variant="h6" sx={{ fontWeight: 800, mb: 0.5, color: '#291C0E' }}>
+                  <Typography variant="h6" sx={{ fontWeight: 800, mb: 0.5, color: '#0F172A' }}>
                     Message Received!
                   </Typography>
                   <Typography variant="body2">
@@ -361,8 +361,8 @@ export default function ContactSection() {
                         fontSize: '1rem',
                         fontWeight: 800,
                         backgroundColor: '#800000',
-                        color: '#F8F5EE',
-                        '&:hover': { backgroundColor: '#633A2C' },
+                        color: '#FFFFFF',
+                        '&:hover': { backgroundColor: '#600000' },
                       }}
                     >
                       {loading ? 'Sending...' : 'Send Enquiry'}

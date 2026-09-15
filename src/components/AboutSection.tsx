@@ -37,9 +37,9 @@ export default function AboutSection() {
       id="about"
       sx={{
         py: { xs: 10, md: 14 },
-        backgroundColor: '#E8E0D2',
-        borderTop: '1px solid rgba(128, 0, 0, 0.15)',
-        borderBottom: '1px solid rgba(128, 0, 0, 0.15)',
+        backgroundColor: '#FFFFFF',
+        borderTop: '1px solid rgba(0, 0, 0, 0.08)',
+        borderBottom: '1px solid rgba(0, 0, 0, 0.08)',
         position: 'relative',
       }}
     >
@@ -50,12 +50,12 @@ export default function AboutSection() {
             <Chip
               label="OUR STORY & PHILOSOPHY"
               sx={{
-                backgroundColor: 'rgba(128, 0, 0, 0.12)',
+                backgroundColor: 'rgba(128, 0, 0, 0.08)',
                 color: '#800000',
                 fontWeight: 800,
                 mb: 2.5,
                 letterSpacing: '0.08em',
-                border: '1px solid rgba(128, 0, 0, 0.3)',
+                border: '1px solid rgba(128, 0, 0, 0.2)',
               }}
             />
 
@@ -63,7 +63,7 @@ export default function AboutSection() {
               variant="h2"
               sx={{
                 fontWeight: 900,
-                color: '#291C0E',
+                color: '#0F172A',
                 fontFamily: '"Outfit", sans-serif',
                 fontSize: { xs: '2.2rem', sm: '2.8rem', md: '3.4rem' },
                 mb: 3,
@@ -76,7 +76,7 @@ export default function AboutSection() {
             <Typography
               variant="body1"
               sx={{
-                color: '#291C0E',
+                color: '#334155',
                 fontSize: '1.1rem',
                 lineHeight: 1.8,
                 mb: 3,
@@ -90,11 +90,11 @@ export default function AboutSection() {
               elevation={0}
               sx={{
                 p: 3,
-                backgroundColor: '#F8F5EE',
+                backgroundColor: '#F8F9FA',
                 borderLeft: '4px solid #800000',
-                borderTop: '1px solid rgba(184, 132, 44, 0.3)',
-                borderRight: '1px solid rgba(184, 132, 44, 0.3)',
-                borderBottom: '1px solid rgba(184, 132, 44, 0.3)',
+                borderTop: '1px solid rgba(0, 0, 0, 0.08)',
+                borderRight: '1px solid rgba(0, 0, 0, 0.08)',
+                borderBottom: '1px solid rgba(0, 0, 0, 0.08)',
                 borderRadius: 2,
                 mb: 3,
               }}
@@ -102,7 +102,7 @@ export default function AboutSection() {
               <Typography
                 variant="body1"
                 sx={{
-                  color: '#633A2C',
+                  color: '#475569',
                   fontSize: '1.02rem',
                   lineHeight: 1.7,
                   fontStyle: 'italic',
@@ -115,7 +115,7 @@ export default function AboutSection() {
             <Typography
               variant="body1"
               sx={{
-                color: '#633A2C',
+                color: '#475569',
                 fontSize: '1rem',
                 lineHeight: 1.7,
                 mb: 4,
@@ -135,23 +135,23 @@ export default function AboutSection() {
                     sx={{
                       p: 3.5,
                       height: '100%',
-                      backgroundColor: '#F8F5EE',
-                      border: '1px solid rgba(184, 132, 44, 0.3)',
+                      backgroundColor: '#F8F9FA',
+                      border: '1px solid rgba(0, 0, 0, 0.08)',
                       borderRadius: 4,
-                      boxShadow: '0 10px 30px rgba(41, 28, 14, 0.04)',
+                      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
                       transition: 'all 0.3s ease',
                       '&:hover': {
                         borderColor: '#800000',
                         transform: 'translateY(-6px)',
-                        boxShadow: '0 15px 35px rgba(128, 0, 0, 0.12)',
+                        boxShadow: '0 12px 32px rgba(128, 0, 0, 0.1)',
                       },
                     }}
                   >
                     <Box sx={{ mb: 2 }}>{pillar.icon}</Box>
-                    <Typography variant="h6" sx={{ fontWeight: 800, color: '#291C0E', mb: 1 }}>
+                    <Typography variant="h6" sx={{ fontWeight: 800, color: '#0F172A', mb: 1 }}>
                       {pillar.title}
                     </Typography>
-                    <Typography variant="body2" sx={{ color: '#633A2C', lineHeight: 1.6 }}>
+                    <Typography variant="body2" sx={{ color: '#475569', lineHeight: 1.6 }}>
                       {pillar.description}
                     </Typography>
                   </Paper>
