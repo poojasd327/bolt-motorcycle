@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  background-color: #F4E6D2 !important;
+  color: #291C0E !important;
+  font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  overflow-x: hidden;
+}
+
+/* Custom Warm Earth Palette Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4E6D2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A78D78;
+  border-radius: 5px;
+  border: 2px solid #F4E6D2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6E473B;
+}
+
+/* Selection highlight */
+::selection {
+  background: rgba(110, 71, 59, 0.2);
+  color: #291C0E;
+}
+
+.MuiPaper-root {
+  background-image: none !important;
+}
