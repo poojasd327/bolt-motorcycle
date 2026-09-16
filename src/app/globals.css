@@ -12,7 +12,7 @@ html,
 body {
   background-color: #FFFFFF !important;
   color: #0F172A !important;
-  font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
   overflow-x: hidden;
@@ -24,23 +24,23 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #F8F9FA;
+  background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: #000000;
   border-radius: 5px;
   border: 2px solid #FFFFFF;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
+  background: #333333;
 }
 
 /* Selection highlight */
 ::selection {
-  background: rgba(128, 0, 0, 0.15);
-  color: #800000;
+  background: #000000;
+  color: #FFFFFF;
 }
 
 .MuiPaper-root {

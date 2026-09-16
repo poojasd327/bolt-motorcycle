@@ -1,43 +1,14 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import {
-  Container,
-  Box,
-  Typography,
-  Paper,
-  Button,
-  Chip,
-  IconButton,
-  Stack,
-  useTheme,
-  useMediaQuery,
-} from '@mui/material';
-import StorefrontIcon from '@mui/icons-material/Storefront';
-import BuildCircleIcon from '@mui/icons-material/BuildCircle';
-import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
-import CheckroomIcon from '@mui/icons-material/Checkroom';
-import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
-import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
+import React from 'react';
+import { Container, Box, Typography, Grid, Button, Stack, Chip } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-
 import { dealershipData } from '../data/dealershipInfo';
 
 export default function ServicesSection() {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
-
-  // Number of cards visible simultaneously
-  const visibleCards = isMobile ? 1 : isTablet ? 2 : 3;
-
-  const services = [
+  const serviceCards = [
     {
-      icon: <StorefrontIcon sx={{ color: '#800000', fontSize: 40 }} />,
       title: 'New Motorcycle Sales',
-      subtitle: 'Complete RE Fleet Availability',
       description:
         'Step into our flagship Bolt Motorcycles showroom to experience the full lineup of Royal Enfield motorcycles with live color options and custom accessories.',
       actionText: 'Explore Fleet',
@@ -45,270 +16,447 @@ export default function ServicesSection() {
       external: false,
     },
     {
-      icon: <BuildCircleIcon sx={{ color: '#800000', fontSize: 40 }} />,
       title: 'Authorised Service Bay',
-      subtitle: 'Certified Master Technicians',
       description:
-        'Express service bays equipped with Royal Enfield computerized diagnostics, automated oil pumps, and precision tuning for smooth thumping rides.',
+        'Express service bays equipped with Royal Enfield computerized diagnostics, master technicians, automated oil pumps, and precision thumping tuning.',
       actionText: 'Book Service',
       actionLink: `https://wa.me/${dealershipData.whatsapp}?text=${encodeURIComponent('Hi Bolt Motorcycles, I would like to book a service appointment for my Royal Enfield motorcycle.')}`,
       external: true,
     },
     {
-      icon: <SettingsSuggestIcon sx={{ color: '#800000', fontSize: 40 }} />,
-      title: '100% Genuine Spare Parts',
-      subtitle: 'Factory Certified Oils & Spares',
+      title: '100% Genuine Spare Parts & Gear',
       description:
-        'Maintain original performance with authentic Royal Enfield engine lubricants, spark plugs, brake pads, cables, and body kits.',
+        'Maintain peak performance with authentic Royal Enfield engine lubricants, spark plugs, brake pads, ECE helmets, and riding apparel.',
       actionText: 'Enquire Parts',
       actionLink: `https://wa.me/${dealershipData.whatsapp}?text=${encodeURIComponent('Hi Bolt Motorcycles, I would like to enquire about genuine RE spare parts.')}`,
       external: true,
     },
-    {
-      icon: <CheckroomIcon sx={{ color: '#800000', fontSize: 40 }} />,
-      title: 'RE Riding Gear & Accessories',
-      subtitle: 'Authentic Protection & Style',
-      description:
-        'Equip your adventure with ECE/DOT-certified Royal Enfield helmets, leather riding jackets, waterproof gloves, saddlebags, and leg guards.',
-      actionText: 'Browse Apparel',
-      actionLink: `https://wa.me/${dealershipData.whatsapp}?text=${encodeURIComponent('Hi Bolt Motorcycles, I am interested in RE riding gear and accessories.')}`,
-      external: true,
-    },
-    {
-      icon: <AccountBalanceIcon sx={{ color: '#800000', fontSize: 40 }} />,
-      title: 'Easy Finance & EMI Desk',
-      subtitle: 'Low Down Payments & Attractive ROI',
-      description:
-        'Hassle-free loan approvals with leading financial institutions. Minimal documentation, flexible tenure options, and instant spot approval.',
-      actionText: 'Calculate EMI',
-      actionLink: '#emi-calculator',
-      external: false,
-    },
-    {
-      icon: <SwapHorizIcon sx={{ color: '#800000', fontSize: 40 }} />,
-      title: 'Bike Exchange & Evaluation',
-      subtitle: 'Instant Trade-In Valuation',
-      description:
-        'Upgrade to your dream Royal Enfield seamlessly. Bring any two-wheeler for transparent evaluation and attractive exchange bonus benefits.',
-      actionText: 'Get Trade Valuation',
-      actionLink: `https://wa.me/${dealershipData.whatsapp}?text=${encodeURIComponent('Hi Bolt Motorcycles, I would like to get a trade-in valuation for my motorcycle.')}`,
-      external: true,
-    },
   ];
-
-  const maxIndex = Math.max(0, services.length - visibleCards);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Keep index within valid range when screen resizes
-  useEffect(() => {
-    if (currentIndex > maxIndex) {
-      setCurrentIndex(maxIndex);
-    }
-  }, [visibleCards, maxIndex, currentIndex]);
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) => Math.max(0, prev - 1));
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => Math.min(maxIndex, prev + 1));
-  };
 
   return (
     <Box
       id="services"
       sx={{
-        py: { xs: 10, md: 14 },
-        backgroundColor: '#F8F9FA',
+        py: { xs: 8, md: 12 },
+        backgroundColor: '#FFFFFF',
         position: 'relative',
-        borderBottom: '1px solid rgba(0, 0, 0, 0.08)',
-        overflow: 'hidden',
+        borderBottom: '1px solid #E2E8F0',
+        fontFamily: '"Nunito Sans", sans-serif',
       }}
     >
-      <Container maxWidth="xl">
-        {/* Section Header */}
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
-            justifyContent: 'space-between',
-            alignItems: { xs: 'center', md: 'flex-end' },
-            mb: 6,
-            textAlign: { xs: 'center', md: 'left' },
-          }}
-        >
-          <Box>
-            <Chip
-              label="END-TO-END RIDER CARE"
-              sx={{
-                backgroundColor: 'rgba(128, 0, 0, 0.08)',
-                color: '#800000',
-                fontWeight: 800,
-                mb: 2,
-                letterSpacing: '0.08em',
-                border: '1px solid rgba(128, 0, 0, 0.2)',
-              }}
-            />
-            <Typography
-              variant="h2"
-              sx={{
-                fontWeight: 900,
-                color: '#0F172A',
-                fontFamily: '"Outfit", sans-serif',
-                fontSize: { xs: '2rem', sm: '2.8rem', md: '3.3rem' },
-                mb: 1,
-              }}
-            >
-              DEALERSHIP <Box component="span" sx={{ color: '#800000' }}>SERVICES & FACILITIES</Box>
-            </Typography>
-            <Typography variant="body1" sx={{ color: '#475569', maxWidth: '650px', fontSize: '1.05rem' }}>
-              From your very first enquiry to expert after-sales care, Bolt Motorcycles offers world-class facilities for every Royal Enfield owner.
-            </Typography>
-          </Box>
-
-          {/* Navigation Slider Buttons */}
-          <Stack direction="row" spacing={1.5} sx={{ mt: { xs: 3, md: 0 } }}>
-            <IconButton
-              onClick={handlePrev}
-              disabled={currentIndex === 0}
-              sx={{
-                backgroundColor: '#FFFFFF',
-                border: '1px solid rgba(0, 0, 0, 0.12)',
-                color: '#800000',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
-                '&:hover': {
-                  backgroundColor: '#800000',
-                  color: '#FFFFFF',
-                  borderColor: '#800000',
-                },
-                '&.Mui-disabled': {
-                  opacity: 0.3,
-                  backgroundColor: '#F1F5F9',
-                },
-              }}
-              aria-label="Previous Slide"
-            >
-              <ArrowBackIosNewIcon fontSize="small" />
-            </IconButton>
-
-            <IconButton
-              onClick={handleNext}
-              disabled={currentIndex >= maxIndex}
-              sx={{
-                backgroundColor: '#FFFFFF',
-                border: '1px solid rgba(0, 0, 0, 0.12)',
-                color: '#800000',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
-                '&:hover': {
-                  backgroundColor: '#800000',
-                  color: '#FFFFFF',
-                  borderColor: '#800000',
-                },
-                '&.Mui-disabled': {
-                  opacity: 0.3,
-                  backgroundColor: '#F1F5F9',
-                },
-              }}
-              aria-label="Next Slide"
-            >
-              <ArrowForwardIosIcon fontSize="small" />
-            </IconButton>
-          </Stack>
-        </Box>
-
-        {/* Slider Viewport Container */}
-        <Box sx={{ overflow: 'hidden', mx: -1.5, py: 1 }}>
-          <Box
+      <Container maxWidth="lg" sx={{ px: { xs: 3, sm: 5, md: 8 } }}>
+        {/* Section Header (Centered) */}
+        <Box sx={{ textAlign: 'center', mb: 7, maxWidth: '750px', mx: 'auto' }}>
+          <Typography
+            variant="subtitle2"
             sx={{
-              display: 'flex',
-              transition: 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-              transform: `translateX(-${currentIndex * (100 / visibleCards)}%)`,
+              fontWeight: 800,
+              color: '#64748B',
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              fontSize: '0.85rem',
+              fontFamily: '"Nunito Sans", sans-serif',
+              mb: 1,
             }}
           >
-            {services.map((service, idx) => (
+            END-TO-END RIDER CARE
+          </Typography>
+
+          <Typography
+            variant="h2"
+            sx={{
+              fontWeight: 900,
+              color: '#0F172A',
+              fontFamily: '"Nunito Sans", sans-serif',
+              fontSize: { xs: '2rem', sm: '2.7rem', md: '3.2rem' },
+              mb: 2,
+              lineHeight: 1.15,
+            }}
+          >
+            DEALERSHIP SERVICES & FACILITIES
+          </Typography>
+
+          <Typography
+            variant="body1"
+            sx={{
+              color: '#475569',
+              fontSize: '1.05rem',
+              lineHeight: 1.6,
+              fontFamily: '"Nunito Sans", sans-serif',
+            }}
+          >
+            From your very first enquiry to expert after-sales care, Bolt Motorcycles offers world-class facilities for every Royal Enfield owner.
+          </Typography>
+        </Box>
+
+        {/* Bento Grid Layout */}
+        <Grid container spacing={3} sx={{ alignItems: 'stretch' }}>
+          {/* Left Side: Tall Feature Image Card */}
+          <Grid size={{ xs: 12, md: 4 }}>
+            <Box
+              sx={{
+                position: 'relative',
+                height: '100%',
+                minHeight: { xs: '380px', md: '480px' },
+                borderRadius: '24px',
+                overflow: 'hidden',
+                border: '1px solid #E2E8F0',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
+                backgroundImage: `url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=80')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'flex-end',
+                p: 4,
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                '&:hover': {
+                  boxShadow: '0 12px 30px rgba(0, 0, 0, 0.15)',
+                  transform: 'translateY(-4px)',
+                },
+              }}
+            >
+              {/* Dark Overlay Gradient */}
               <Box
-                key={idx}
                 sx={{
-                  minWidth: `${100 / visibleCards}%`,
-                  maxWidth: `${100 / visibleCards}%`,
-                  px: 1.5,
-                  boxSizing: 'border-box',
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0.05) 100%)',
                 }}
-              >
-                <Paper
-                  elevation={0}
+              />
+
+              <Box sx={{ position: 'relative', zIndex: 2, color: '#FFFFFF' }}>
+                <Chip
+                  label="BOLT FLAGSHIP"
+                  size="small"
                   sx={{
+                    backgroundColor: '#FFFFFF',
+                    color: '#000000',
+                    fontWeight: 800,
+                    fontSize: '0.7rem',
+                    fontFamily: '"Nunito Sans", sans-serif',
+                    mb: 1.5,
+                  }}
+                />
+                <Typography
+                  variant="h4"
+                  sx={{
+                    fontWeight: 900,
+                    fontFamily: '"Nunito Sans", sans-serif',
+                    mb: 1,
+                    fontSize: '1.6rem',
+                    color: '#FFFFFF',
+                  }}
+                >
+                  Pure Motorcycling Experience
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: '#D4D4D8',
+                    fontSize: '0.9rem',
+                    lineHeight: 1.5,
+                    fontFamily: '"Nunito Sans", sans-serif',
+                  }}
+                >
+                  Visit our state-of-the-art facility equipped with dedicated customer lounges, express bays, and full RE catalog.
+                </Typography>
+              </Box>
+            </Box>
+          </Grid>
+
+          {/* Right Side: 2x2 Grid of Cards */}
+          <Grid size={{ xs: 12, md: 8 }}>
+            <Grid container spacing={3} sx={{ height: '100%' }}>
+              {/* Card 1: Top Left */}
+              <Grid size={{ xs: 12, sm: 6 }}>
+                <Box
+                  sx={{
+                    backgroundColor: '#FFFFFF',
+                    borderRadius: '20px',
                     p: 4,
                     height: '100%',
-                    minHeight: 330,
+                    minHeight: '220px',
+                    border: '1px solid #E2E8F0',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
                     display: 'flex',
                     flexDirection: 'column',
-                    backgroundColor: '#FFFFFF',
-                    border: '1px solid rgba(0, 0, 0, 0.08)',
-                    borderRadius: 4,
-                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
-                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    justifyContent: 'space-between',
+                    transition: 'all 0.3s ease',
                     '&:hover': {
-                      borderColor: '#800000',
-                      transform: 'translateY(-6px)',
-                      boxShadow: '0 12px 32px rgba(128, 0, 0, 0.12)',
+                      borderColor: '#000000',
+                      boxShadow: '0 10px 28px rgba(0, 0, 0, 0.08)',
+                      transform: 'translateY(-3px)',
                     },
                   }}
                 >
-                  <Box sx={{ mb: 2.5 }}>{service.icon}</Box>
-                  <Typography variant="h5" sx={{ fontWeight: 800, color: '#0F172A', mb: 0.5 }}>
-                    {service.title}
-                  </Typography>
-                  <Typography variant="caption" sx={{ color: '#475569', fontWeight: 700, mb: 2, display: 'block' }}>
-                    {service.subtitle}
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: '#475569', mb: 3, lineHeight: 1.7, flexGrow: 1 }}>
-                    {service.description}
-                  </Typography>
-
-                  <Box sx={{ pt: 2, borderTop: '1px solid rgba(0, 0, 0, 0.06)' }}>
-                    <Button
-                      variant="text"
-                      component="a"
-                      href={service.actionLink}
-                      target={service.external ? '_blank' : undefined}
-                      endIcon={<ArrowForwardIcon />}
+                  <Box>
+                    <Typography
+                      variant="h5"
                       sx={{
-                        color: '#800000',
-                        p: 0,
-                        fontWeight: 700,
-                        '&:hover': { color: '#600000', background: 'transparent' },
+                        fontWeight: 800,
+                        color: '#0F172A',
+                        fontFamily: '"Nunito Sans", sans-serif',
+                        fontSize: '1.35rem',
+                        mb: 1.5,
                       }}
                     >
-                      {service.actionText}
+                      {serviceCards[0].title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: '#64748B',
+                        fontSize: '0.92rem',
+                        lineHeight: 1.6,
+                        fontFamily: '"Nunito Sans", sans-serif',
+                      }}
+                    >
+                      {serviceCards[0].description}
+                    </Typography>
+                  </Box>
+
+                  <Box sx={{ mt: 3 }}>
+                    <Button
+                      component="a"
+                      href={serviceCards[0].actionLink}
+                      endIcon={<ArrowForwardIcon />}
+                      sx={{
+                        color: '#000000',
+                        fontWeight: 800,
+                        p: 0,
+                        fontSize: '0.88rem',
+                        fontFamily: '"Nunito Sans", sans-serif',
+                        '&:hover': { background: 'transparent', textDecoration: 'underline' },
+                      }}
+                    >
+                      {serviceCards[0].actionText}
                     </Button>
                   </Box>
-                </Paper>
-              </Box>
-            ))}
-          </Box>
-        </Box>
+                </Box>
+              </Grid>
 
-        {/* Carousel Pagination Dots */}
-        <Stack direction="row" spacing={1} sx={{ justifyContent: 'center', mt: 4 }}>
-          {Array.from({ length: maxIndex + 1 }).map((_, dotIdx) => (
-            <Box
-              key={dotIdx}
-              onClick={() => setCurrentIndex(dotIdx)}
-              sx={{
-                width: currentIndex === dotIdx ? 28 : 10,
-                height: 10,
-                borderRadius: '5px',
-                backgroundColor: currentIndex === dotIdx ? '#800000' : 'rgba(0, 0, 0, 0.2)',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  backgroundColor: '#800000',
-                },
-              }}
-            />
-          ))}
-        </Stack>
+              {/* Card 2: Top Right */}
+              <Grid size={{ xs: 12, sm: 6 }}>
+                <Box
+                  sx={{
+                    backgroundColor: '#FFFFFF',
+                    borderRadius: '20px',
+                    p: 4,
+                    height: '100%',
+                    minHeight: '220px',
+                    border: '1px solid #E2E8F0',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      borderColor: '#000000',
+                      boxShadow: '0 10px 28px rgba(0, 0, 0, 0.08)',
+                      transform: 'translateY(-3px)',
+                    },
+                  }}
+                >
+                  <Box>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        fontWeight: 800,
+                        color: '#0F172A',
+                        fontFamily: '"Nunito Sans", sans-serif',
+                        fontSize: '1.35rem',
+                        mb: 1.5,
+                      }}
+                    >
+                      {serviceCards[1].title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: '#64748B',
+                        fontSize: '0.92rem',
+                        lineHeight: 1.6,
+                        fontFamily: '"Nunito Sans", sans-serif',
+                      }}
+                    >
+                      {serviceCards[1].description}
+                    </Typography>
+                  </Box>
+
+                  <Box sx={{ mt: 3 }}>
+                    <Button
+                      component="a"
+                      href={serviceCards[1].actionLink}
+                      target="_blank"
+                      endIcon={<ArrowForwardIcon />}
+                      sx={{
+                        color: '#000000',
+                        fontWeight: 800,
+                        p: 0,
+                        fontSize: '0.88rem',
+                        fontFamily: '"Nunito Sans", sans-serif',
+                        '&:hover': { background: 'transparent', textDecoration: 'underline' },
+                      }}
+                    >
+                      {serviceCards[1].actionText}
+                    </Button>
+                  </Box>
+                </Box>
+              </Grid>
+
+              {/* Card 3: Bottom Left */}
+              <Grid size={{ xs: 12, sm: 6 }}>
+                <Box
+                  sx={{
+                    backgroundColor: '#FFFFFF',
+                    borderRadius: '20px',
+                    p: 4,
+                    height: '100%',
+                    minHeight: '220px',
+                    border: '1px solid #E2E8F0',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      borderColor: '#000000',
+                      boxShadow: '0 10px 28px rgba(0, 0, 0, 0.08)',
+                      transform: 'translateY(-3px)',
+                    },
+                  }}
+                >
+                  <Box>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        fontWeight: 800,
+                        color: '#0F172A',
+                        fontFamily: '"Nunito Sans", sans-serif',
+                        fontSize: '1.35rem',
+                        mb: 1.5,
+                      }}
+                    >
+                      {serviceCards[2].title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: '#64748B',
+                        fontSize: '0.92rem',
+                        lineHeight: 1.6,
+                        fontFamily: '"Nunito Sans", sans-serif',
+                      }}
+                    >
+                      {serviceCards[2].description}
+                    </Typography>
+                  </Box>
+
+                  <Box sx={{ mt: 3 }}>
+                    <Button
+                      component="a"
+                      href={serviceCards[2].actionLink}
+                      target="_blank"
+                      endIcon={<ArrowForwardIcon />}
+                      sx={{
+                        color: '#000000',
+                        fontWeight: 800,
+                        p: 0,
+                        fontSize: '0.88rem',
+                        fontFamily: '"Nunito Sans", sans-serif',
+                        '&:hover': { background: 'transparent', textDecoration: 'underline' },
+                      }}
+                    >
+                      {serviceCards[2].actionText}
+                    </Button>
+                  </Box>
+                </Box>
+              </Grid>
+
+              {/* Card 4: Bottom Right Image Card with Content Overlay */}
+              <Grid size={{ xs: 12, sm: 6 }}>
+                <Box
+                  sx={{
+                    position: 'relative',
+                    borderRadius: '20px',
+                    overflow: 'hidden',
+                    height: '100%',
+                    minHeight: '220px',
+                    border: '1px solid #E2E8F0',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
+                    backgroundImage: `url('https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=800&q=80')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    p: 4,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      boxShadow: '0 10px 28px rgba(0, 0, 0, 0.15)',
+                      transform: 'translateY(-3px)',
+                    },
+                  }}
+                >
+                  {/* Dark Overlay Gradient for High Legibility */}
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      inset: 0,
+                      background: 'linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.55) 100%)',
+                      zIndex: 1,
+                    }}
+                  />
+
+                  <Box sx={{ position: 'relative', zIndex: 2, color: '#FFFFFF' }}>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        fontWeight: 800,
+                        color: '#FFFFFF',
+                        fontFamily: '"Nunito Sans", sans-serif',
+                        fontSize: '1.35rem',
+                        mb: 1.5,
+                      }}
+                    >
+                      Easy Finance & Trade-In
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: '#E4E4E7',
+                        fontSize: '0.92rem',
+                        lineHeight: 1.6,
+                        fontFamily: '"Nunito", sans-serif',
+                      }}
+                    >
+                      Hassle-free loan approvals with low down payments, attractive ROI, and instant two-wheeler exchange valuation.
+                    </Typography>
+                  </Box>
+
+                  <Box sx={{ position: 'relative', zIndex: 2, mt: 3 }}>
+                    <Button
+                      component="a"
+                      href="#emi-calculator"
+                      endIcon={<ArrowForwardIcon />}
+                      sx={{
+                        color: '#FFFFFF',
+                        fontWeight: 800,
+                        p: 0,
+                        fontSize: '0.88rem',
+                        fontFamily: '"Nunito", sans-serif',
+                        '&:hover': { background: 'transparent', textDecoration: 'underline' },
+                      }}
+                    >
+                      Calculate EMI
+                    </Button>
+                  </Box>
+                </Box>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
       </Container>
     </Box>
   );

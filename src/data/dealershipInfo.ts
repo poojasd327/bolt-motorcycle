@@ -58,23 +58,23 @@ export const dealershipData: DealershipData = {
   stats: [
     {
       label: 'Bikes Delivered',
-      value: '4,500+',
+      value: '15K+',
       description: 'Happy Royal Enfield riders on the road',
+    },
+    {
+      label: 'Services Completed',
+      value: '50K+',
+      description: 'Express maintenance & certified care',
+    },
+    {
+      label: 'Genuine Gear & Parts',
+      value: '100+',
+      description: 'Apparel, helmets & custom accessories',
     },
     {
       label: 'Customer Rating',
       value: '4.9 ★',
-      description: 'Based on 2,800+ Google & showroom reviews',
-    },
-    {
-      label: 'Service Capacity',
-      value: '50+ / Day',
-      description: 'Express automated service bays & master mechanics',
-    },
-    {
-      label: 'Established Year',
-      value: '2021',
-      description: '5+ Years of trusted automotive excellence',
+      description: 'Based on 5,000+ verified customer reviews',
     },
   ],
   aboutUs: {

@@ -1,128 +1,392 @@
 'use client';
 
-import React from 'react';
-import { Container, Box, Typography, Grid, Paper, Rating, Avatar, Chip } from '@mui/material';
-import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
-import VerifiedIcon from '@mui/icons-material/Verified';
+import React, { useState } from 'react';
+import {
+  Container,
+  Box,
+  Typography,
+  Grid,
+  Avatar,
+  Chip,
+  IconButton,
+  Stack,
+} from '@mui/material';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 export default function TestimonialsSection() {
-  const reviews = [
-    {
-      name: 'Vikramaditya Sharma',
-      bikeBought: 'Royal Enfield Classic 350',
-      rating: 5,
-      date: 'August 2026',
-      comment:
-        'Purchased my Classic 350 from Bolt Motorcycles. From the initial test ride to delivery day, the experience was smooth and transparent. Special thanks to the management team for hassle-free finance approval!',
-      avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
-    },
-    {
-      name: 'Kavya Reddy',
-      bikeBought: 'Hunter 350 (Rebel Blue)',
-      rating: 5,
-      date: 'July 2026',
-      comment:
-        'Best RE Dealership in town! Bolt Motorcycles delivered my Hunter 350 within 48 hours. The team is super knowledgeable, helpful, and their after-sales service desk is top notch.',
-      avatarUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80',
-    },
-    {
-      name: 'Rohan Deshmukh',
-      bikeBought: 'Himalayan 450 (Kamet White)',
-      rating: 5,
-      date: 'June 2026',
-      comment:
-        'Took my Himalayan 450 for the 10,000 km major service at Bolt Authorised Workshop. Certified mechanics did a thorough job with throttle calibration and liquid-coolant flush. Pure perfection!',
-      avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
-    },
-  ];
+  const [scrollIndex, setScrollIndex] = useState(0);
+
+  const handleNext = () => {
+    setScrollIndex((prev) => (prev + 1) % 2);
+  };
+
+  const handlePrev = () => {
+    setScrollIndex((prev) => (prev - 1 + 2) % 2);
+  };
 
   return (
     <Box
       id="reviews"
       sx={{
-        py: { xs: 10, md: 14 },
-        backgroundColor: '#F8F9FA',
+        py: { xs: 8, md: 12 },
+        backgroundColor: '#FFFFFF',
         position: 'relative',
-        borderBottom: '1px solid rgba(0, 0, 0, 0.08)',
+        borderBottom: '1px solid #E2E8F0',
+        fontFamily: '"Nunito Sans", sans-serif',
       }}
     >
-      <Container maxWidth="xl">
-        <Box sx={{ textAlign: 'center', mb: 8 }}>
+      <Container maxWidth="lg" sx={{ px: { xs: 3, sm: 5, md: 8 } }}>
+        {/* Header Section (Centered) */}
+        <Box sx={{ textAlign: 'center', mb: 7, maxWidth: '750px', mx: 'auto' }}>
           <Chip
-            icon={<VerifiedIcon sx={{ color: '#800000 !important' }} />}
-            label="4.9 / 5.0 RATED DEALERSHIP"
+            label="Happy Riders"
             sx={{
-              backgroundColor: 'rgba(128, 0, 0, 0.08)',
-              color: '#800000',
+              backgroundColor: '#F1F5F9',
+              color: '#0F172A',
               fontWeight: 800,
               mb: 2,
-              letterSpacing: '0.08em',
-              border: '1px solid rgba(128, 0, 0, 0.2)',
+              fontSize: '0.85rem',
+              fontFamily: '"Nunito Sans", sans-serif',
+              px: 1.5,
+              py: 0.5,
+              borderRadius: '20px',
             }}
           />
+
           <Typography
             variant="h2"
             sx={{
               fontWeight: 900,
               color: '#0F172A',
-              fontFamily: '"Outfit", sans-serif',
-              fontSize: { xs: '2rem', sm: '2.8rem', md: '3.3rem' },
-              mb: 2,
+              fontFamily: '"Nunito Sans", sans-serif',
+              fontSize: { xs: '2rem', sm: '2.7rem', md: '3.2rem' },
+              mb: 1.5,
+              lineHeight: 1.15,
             }}
           >
-            WHAT OUR <Box component="span" sx={{ color: '#800000' }}>RIDERS SAY</Box>
+            We have earned good reputation with riders
           </Typography>
-          <Typography variant="body1" sx={{ color: '#475569', maxWidth: '700px', mx: 'auto', fontSize: '1.05rem' }}>
-            Customer satisfaction is at the core of our approach. Hear real experiences from our proud Royal Enfield owners at Bolt Motorcycles.
+
+          <Typography
+            variant="body1"
+            sx={{
+              color: '#64748B',
+              fontSize: '1.05rem',
+              lineHeight: 1.6,
+              fontFamily: '"Nunito Sans", sans-serif',
+            }}
+          >
+            Read about their experience riding with Bolt Motorcycles.
           </Typography>
         </Box>
 
-        <Grid container spacing={4}>
-          {reviews.map((rev, idx) => (
-            <Grid size={{ xs: 12, md: 4 }} key={idx}>
-              <Paper
-                elevation={0}
+        {/* 3 Unique Testimonial Cards Layout Container */}
+        <Box sx={{ maxWidth: '1140px', mx: 'auto' }}>
+          <Grid container spacing={3.5} sx={{ alignItems: 'stretch', justifyContent: 'center' }}>
+          {/* Card 1: Left Chat Bubble Review Style */}
+          <Grid size={{ xs: 12, md: 4 }}>
+            <Box
+              sx={{
+                backgroundColor: '#FFFFFF',
+                borderRadius: '24px',
+                p: 3.5,
+                height: '100%',
+                minHeight: '430px',
+                border: '1px solid #E2E8F0',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  borderColor: '#000000',
+                  boxShadow: '0 10px 28px rgba(0, 0, 0, 0.08)',
+                  transform: 'translateY(-4px)',
+                },
+              }}
+            >
+              {/* Chat Message Bubbles */}
+              <Stack spacing={2}>
+                <Box
+                  sx={{
+                    backgroundColor: '#F4F4F6',
+                    borderRadius: '16px',
+                    p: 2.5,
+                  }}
+                >
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: '#0F172A',
+                      fontWeight: 600,
+                      lineHeight: 1.6,
+                      fontSize: '0.92rem',
+                      fontFamily: '"Nunito Sans", sans-serif',
+                    }}
+                  >
+                    Buying my Classic 350 from Bolt Motorcycles was seamless. Their attention to detail, transparent pricing, and delivery speed is unmatched.
+                  </Typography>
+                </Box>
+
+                <Box
+                  sx={{
+                    backgroundColor: '#F4F4F6',
+                    borderRadius: '16px',
+                    p: 2,
+                    maxWidth: '85%',
+                    ml: 'auto',
+                  }}
+                >
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: '#64748B',
+                      fontSize: '0.88rem',
+                      fontWeight: 600,
+                      lineHeight: 1.5,
+                      fontFamily: '"Nunito Sans", sans-serif',
+                    }}
+                  >
+                    thank you! Thrilled to see it performing so well.
+                  </Typography>
+                </Box>
+              </Stack>
+
+              {/* User Avatar & Details */}
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, pt: 3 }}>
+                <Avatar
+                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80"
+                  alt="Ryan Sharma"
+                  sx={{ width: 44, height: 44 }}
+                />
+                <Box>
+                  <Typography
+                    variant="subtitle1"
+                    sx={{ fontWeight: 800, color: '#0F172A', fontSize: '1rem', fontFamily: '"Nunito Sans", sans-serif' }}
+                  >
+                    Ryan Sharma
+                  </Typography>
+                  <Typography
+                    variant="caption"
+                    sx={{ color: '#64748B', fontWeight: 600, fontSize: '0.78rem', fontFamily: '"Nunito Sans", sans-serif' }}
+                  >
+                    Classic 350 Owner
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
+          </Grid>
+
+          {/* Card 2: Middle Featured Dark Contrast Card */}
+          <Grid size={{ xs: 12, md: 4 }}>
+            <Box
+              sx={{
+                backgroundColor: '#121212',
+                color: '#FFFFFF',
+                borderRadius: '24px',
+                p: 3.5,
+                height: '100%',
+                minHeight: '430px',
+                border: '1px solid #27272A',
+                boxShadow: '0 8px 28px rgba(0, 0, 0, 0.12)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  borderColor: '#FFFFFF',
+                  boxShadow: '0 12px 32px rgba(0, 0, 0, 0.2)',
+                  transform: 'translateY(-4px)',
+                },
+              }}
+            >
+              <Box>
+                <Chip
+                  label="FEATURED REVIEW"
+                  size="small"
+                  sx={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.12)',
+                    color: '#FFFFFF',
+                    fontWeight: 800,
+                    fontSize: '0.7rem',
+                    fontFamily: '"Nunito Sans", sans-serif',
+                    mb: 3,
+                  }}
+                />
+
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: '#FFFFFF',
+                    fontWeight: 600,
+                    fontSize: '1.02rem',
+                    lineHeight: 1.7,
+                    fontFamily: '"Nunito Sans", sans-serif',
+                  }}
+                >
+                  "The team at Bolt Motorcycles completely transformed my buying experience. It was fast, transparent, smooth, and we've already had amazing thumping rides across the state!"
+                </Typography>
+              </Box>
+
+              {/* User Avatar & Info */}
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, pt: 3, borderTop: '1px solid #27272A' }}>
+                <Avatar
+                  src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80"
+                  alt="Kavya Rao"
+                  sx={{ width: 44, height: 44, border: '2px solid #FFFFFF' }}
+                />
+                <Box>
+                  <Typography
+                    variant="subtitle1"
+                    sx={{ fontWeight: 800, color: '#FFFFFF', fontSize: '1rem', fontFamily: '"Nunito Sans", sans-serif' }}
+                  >
+                    Kavya Rao
+                  </Typography>
+                  <Typography
+                    variant="caption"
+                    sx={{ color: '#A1A1AA', fontWeight: 600, fontSize: '0.78rem', fontFamily: '"Nunito Sans", sans-serif' }}
+                  >
+                    Hunter 350 Rider
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
+          </Grid>
+
+          {/* Card 3: Right Quote + Stats Metrics Card */}
+          <Grid size={{ xs: 12, md: 4 }}>
+            <Box
+              sx={{
+                backgroundColor: '#FFFFFF',
+                borderRadius: '24px',
+                p: 3.5,
+                height: '100%',
+                minHeight: '430px',
+                border: '1px solid #E2E8F0',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  borderColor: '#000000',
+                  boxShadow: '0 10px 28px rgba(0, 0, 0, 0.08)',
+                  transform: 'translateY(-4px)',
+                },
+              }}
+            >
+              {/* Quote Text */}
+              <Typography
+                variant="body1"
                 sx={{
-                  p: 4,
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  backgroundColor: '#FFFFFF',
-                  borderRadius: 4,
-                  border: '1px solid rgba(0, 0, 0, 0.08)',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
-                  position: 'relative',
-                  transition: 'all 0.3s ease',
-                  '&:hover': {
-                    borderColor: '#800000',
-                    transform: 'translateY(-6px)',
-                    boxShadow: '0 12px 32px rgba(128, 0, 0, 0.12)',
-                  },
+                  color: '#0F172A',
+                  fontWeight: 600,
+                  fontSize: '0.96rem',
+                  lineHeight: 1.6,
+                  fontFamily: '"Nunito Sans", sans-serif',
                 }}
               >
-                <FormatQuoteIcon sx={{ color: 'rgba(128, 0, 0, 0.15)', fontSize: 50, position: 'absolute', top: 20, right: 20 }} />
+                I loved how they took the time to understand every aspect of my riding preference and turned that insight into a powerful thumping machine.
+              </Typography>
 
-                <Rating value={rev.rating} readOnly sx={{ color: '#800000', mb: 2 }} />
-
-                <Typography variant="body1" sx={{ color: '#0F172A', lineHeight: 1.7, mb: 4, flexGrow: 1, fontStyle: 'italic' }}>
-                  "{rev.comment}"
-                </Typography>
-
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, pt: 2, borderTop: '1px solid rgba(0, 0, 0, 0.06)' }}>
-                  <Avatar src={rev.avatarUrl} alt={rev.name} sx={{ width: 48, height: 48, border: '2px solid #800000' }} />
-                  <Box>
-                    <Typography variant="subtitle1" sx={{ fontWeight: 800, color: '#0F172A' }}>
-                      {rev.name}
+              {/* Stats Metrics Block */}
+              <Box sx={{ my: 3 }}>
+                <Grid container spacing={2}>
+                  <Grid size={{ xs: 6 }}>
+                    <Typography
+                      variant="h4"
+                      sx={{ fontWeight: 900, color: '#0F172A', fontFamily: '"Nunito Sans", sans-serif', fontSize: '1.8rem' }}
+                    >
+                      4.9 ★
                     </Typography>
-                    <Typography variant="caption" sx={{ color: '#800000', fontWeight: 700, display: 'block' }}>
-                      {rev.bikeBought}
+                    <Typography
+                      variant="caption"
+                      sx={{ color: '#64748B', fontWeight: 700, fontSize: '0.78rem', fontFamily: '"Nunito Sans", sans-serif' }}
+                    >
+                      Customer Rating
                     </Typography>
-                  </Box>
+                  </Grid>
+
+                  <Grid size={{ xs: 6 }}>
+                    <Typography
+                      variant="h4"
+                      sx={{ fontWeight: 900, color: '#0F172A', fontFamily: '"Nunito Sans", sans-serif', fontSize: '1.8rem' }}
+                    >
+                      4,500+
+                    </Typography>
+                    <Typography
+                      variant="caption"
+                      sx={{ color: '#64748B', fontWeight: 700, fontSize: '0.78rem', fontFamily: '"Nunito Sans", sans-serif' }}
+                    >
+                      Bikes Delivered
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </Box>
+
+              {/* Bottom Divider & User Avatar */}
+              <Box sx={{ pt: 2.5, borderTop: '1px solid #F1F5F9', display: 'flex', alignItems: 'center', gap: 2 }}>
+                <Avatar
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
+                  alt="Michael Ross"
+                  sx={{ width: 44, height: 44 }}
+                />
+                <Box>
+                  <Typography
+                    variant="subtitle1"
+                    sx={{ fontWeight: 800, color: '#0F172A', fontSize: '1rem', fontFamily: '"Nunito Sans", sans-serif' }}
+                  >
+                    Michael Ross
+                  </Typography>
+                  <Typography
+                    variant="caption"
+                    sx={{ color: '#64748B', fontWeight: 600, fontSize: '0.78rem', fontFamily: '"Nunito Sans", sans-serif' }}
+                  >
+                    Himalayan 450 Adventurer
+                  </Typography>
                 </Box>
-              </Paper>
-            </Grid>
-          ))}
+              </Box>
+            </Box>
+          </Grid>
         </Grid>
+
+        {/* Centered Bottom Control Arrows */}
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+          <Stack direction="row" spacing={1.5}>
+            <IconButton
+              onClick={handlePrev}
+              aria-label="Previous review"
+              sx={{
+                backgroundColor: '#000000',
+                color: '#FFFFFF',
+                width: 44,
+                height: 44,
+                '&:hover': {
+                  backgroundColor: '#262626',
+                },
+              }}
+            >
+              <ChevronLeftIcon />
+            </IconButton>
+            <IconButton
+              onClick={handleNext}
+              aria-label="Next review"
+              sx={{
+                backgroundColor: '#000000',
+                color: '#FFFFFF',
+                width: 44,
+                height: 44,
+                '&:hover': {
+                  backgroundColor: '#262626',
+                },
+              }}
+            >
+              <ChevronRightIcon />
+            </IconButton>
+          </Stack>
+        </Box>
+        </Box>
       </Container>
     </Box>
   );

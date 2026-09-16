@@ -13,14 +13,14 @@ export default function Footer() {
     <Box
       component="footer"
       sx={{
-        backgroundColor: '#F8F9FA',
+        backgroundColor: '#F8FAFC',
         pt: 8,
         pb: 4,
-        borderTop: '1px solid rgba(0, 0, 0, 0.08)',
+        borderTop: '1px solid #E2E8F0',
         color: '#475569',
       }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="lg" sx={{ px: { xs: 3, sm: 5, md: 8 } }}>
         <Grid container spacing={5} sx={{ mb: 6 }}>
           {/* Brand Col */}
           <Grid size={{ xs: 12, md: 4 }}>
@@ -30,7 +30,7 @@ export default function Footer() {
                   width: 40,
                   height: 40,
                   borderRadius: '10px',
-                  background: 'linear-gradient(135deg, #800000 0%, #A32A2A 100%)',
+                  background: 'linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -43,7 +43,7 @@ export default function Footer() {
                   BOLT MOTORCYCLES
                 </Typography>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                  <VerifiedIcon sx={{ color: '#800000', fontSize: 13 }} />
+                  <VerifiedIcon sx={{ color: '#D32F2F', fontSize: 13 }} />
                   <Typography variant="caption" sx={{ color: '#475569', fontWeight: 800 }}>
                     Authorised RE Dealership
                   </Typography>
@@ -62,19 +62,19 @@ export default function Footer() {
               Quick Links
             </Typography>
             <Stack spacing={1.5}>
-              <Link href="#hero" color="inherit" underline="hover" sx={{ '&:hover': { color: '#800000' } }}>
+              <Link href="#hero" color="inherit" underline="hover" sx={{ '&:hover': { color: '#D32F2F' } }}>
                 Home
               </Link>
-              <Link href="#models" color="inherit" underline="hover" sx={{ '&:hover': { color: '#800000' } }}>
+              <Link href="#models" color="inherit" underline="hover" sx={{ '&:hover': { color: '#D32F2F' } }}>
                 RE Motorcycles
               </Link>
-              <Link href="#about" color="inherit" underline="hover" sx={{ '&:hover': { color: '#800000' } }}>
+              <Link href="#about" color="inherit" underline="hover" sx={{ '&:hover': { color: '#D32F2F' } }}>
                 About Bolt
               </Link>
-              <Link href="#services" color="inherit" underline="hover" sx={{ '&:hover': { color: '#800000' } }}>
+              <Link href="#services" color="inherit" underline="hover" sx={{ '&:hover': { color: '#D32F2F' } }}>
                 Workshop & Services
               </Link>
-              <Link href="#emi-calculator" color="inherit" underline="hover" sx={{ '&:hover': { color: '#800000' } }}>
+              <Link href="#emi-calculator" color="inherit" underline="hover" sx={{ '&:hover': { color: '#D32F2F' } }}>
                 EMI Calculator
               </Link>
             </Stack>
@@ -86,19 +86,19 @@ export default function Footer() {
               Popular Models
             </Typography>
             <Stack spacing={1.5}>
-              <Link href="#models" color="inherit" underline="hover" sx={{ '&:hover': { color: '#800000' } }}>
+              <Link href="#models" color="inherit" underline="hover" sx={{ '&:hover': { color: '#D32F2F' } }}>
                 Hunter 350
               </Link>
-              <Link href="#models" color="inherit" underline="hover" sx={{ '&:hover': { color: '#800000' } }}>
+              <Link href="#models" color="inherit" underline="hover" sx={{ '&:hover': { color: '#D32F2F' } }}>
                 Classic 350 Reborn
               </Link>
-              <Link href="#models" color="inherit" underline="hover" sx={{ '&:hover': { color: '#800000' } }}>
+              <Link href="#models" color="inherit" underline="hover" sx={{ '&:hover': { color: '#D32F2F' } }}>
                 Himalayan 450
               </Link>
-              <Link href="#models" color="inherit" underline="hover" sx={{ '&:hover': { color: '#800000' } }}>
+              <Link href="#models" color="inherit" underline="hover" sx={{ '&:hover': { color: '#D32F2F' } }}>
                 Bullet 350
               </Link>
-              <Link href="#models" color="inherit" underline="hover" sx={{ '&:hover': { color: '#800000' } }}>
+              <Link href="#models" color="inherit" underline="hover" sx={{ '&:hover': { color: '#D32F2F' } }}>
                 Continental GT 650
               </Link>
             </Stack>
@@ -116,21 +116,21 @@ export default function Footer() {
               Established in 2021
             </Typography>
             <Typography variant="body2" sx={{ mb: 1, display: 'flex', alignItems: 'center', gap: 1 }}>
-              <PhoneIcon sx={{ color: '#800000', fontSize: 18 }} />
-              <Link href={`tel:${dealershipData.phoneRaw}`} color="inherit" underline="hover" sx={{ '&:hover': { color: '#800000' } }}>
+              <PhoneIcon sx={{ color: '#D32F2F', fontSize: 18 }} />
+              <Link href={`tel:${dealershipData.phoneRaw}`} color="inherit" underline="hover" sx={{ '&:hover': { color: '#D32F2F' } }}>
                 {dealershipData.phone}
               </Link>
             </Typography>
             <Typography variant="body2" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-              <EmailIcon sx={{ color: '#800000', fontSize: 18 }} />
-              <Link href={`mailto:${dealershipData.email}`} color="inherit" underline="hover" sx={{ '&:hover': { color: '#800000' } }}>
+              <EmailIcon sx={{ color: '#D32F2F', fontSize: 18 }} />
+              <Link href={`mailto:${dealershipData.email}`} color="inherit" underline="hover" sx={{ '&:hover': { color: '#D32F2F' } }}>
                 {dealershipData.email}
               </Link>
             </Typography>
           </Grid>
         </Grid>
 
-        <Divider sx={{ borderColor: 'rgba(0, 0, 0, 0.08)', mb: 4 }} />
+        <Divider sx={{ borderColor: '#E2E8F0', mb: 4 }} />
 
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, justifyContent: 'space-between', alignItems: 'center', gap: 2 }}>
           <Typography variant="caption" sx={{ color: '#475569' }}>

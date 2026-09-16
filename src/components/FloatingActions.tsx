@@ -30,11 +30,11 @@ export default function FloatingActions() {
           sx={{
             fontWeight: 800,
             px: 2.5,
-            boxShadow: '0 8px 25px rgba(128, 0, 0, 0.3)',
-            backgroundColor: '#800000',
+            boxShadow: '0 8px 25px rgba(211, 47, 47, 0.35)',
+            background: 'linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%)',
             color: '#FFFFFF',
             '&:hover': {
-              backgroundColor: '#600000',
+              background: 'linear-gradient(135deg, #B71C1C 0%, #8E0000 100%)',
               transform: 'scale(1.05)',
             },
           }}

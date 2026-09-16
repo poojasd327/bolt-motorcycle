@@ -77,7 +77,7 @@ export default function TestRideModal({
         particleCount: 100,
         spread: 70,
         origin: { y: 0.6 },
-        colors: ['#800000', '#633A2C', '#B8842C'],
+        colors: ['#D32F2F', '#B71C1C', '#0F172A'],
       });
     }, 1000);
   };
@@ -102,8 +102,8 @@ export default function TestRideModal({
             backgroundColor: '#FFFFFF',
             backgroundImage: 'none',
             borderRadius: 4,
-            border: '1px solid rgba(0, 0, 0, 0.1)',
-            boxShadow: '0 25px 60px rgba(0, 0, 0, 0.15)',
+            border: '1px solid #E2E8F0',
+            boxShadow: '0 25px 60px rgba(15, 23, 42, 0.15)',
             color: '#0F172A',
           },
         },
@@ -117,14 +117,14 @@ export default function TestRideModal({
               width: 38,
               height: 38,
               borderRadius: 2,
-              backgroundColor: 'rgba(128, 0, 0, 0.08)',
-              border: '1px solid #800000',
+              backgroundColor: 'rgba(211, 47, 47, 0.08)',
+              border: '1px solid #D32F2F',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
             }}
           >
-            <TwoWheelerIcon sx={{ color: '#800000' }} />
+            <TwoWheelerIcon sx={{ color: '#D32F2F' }} />
           </Box>
           <Box>
             <Typography variant="h6" sx={{ fontWeight: 800, color: '#0F172A' }}>
@@ -134,7 +134,7 @@ export default function TestRideModal({
                 ? 'Request On-Road Price Quote'
                 : 'Schedule Authorised Service'}
             </Typography>
-            <Typography variant="caption" sx={{ color: '#800000', fontWeight: 800 }}>
+            <Typography variant="caption" sx={{ color: '#D32F2F', fontWeight: 800 }}>
               Bolt Motorcycles • Authorised RE Dealership
             </Typography>
           </Box>
@@ -152,21 +152,21 @@ export default function TestRideModal({
               Booking Confirmed!
             </Typography>
             <Typography variant="body1" sx={{ color: '#475569', mb: 3 }}>
-              Thank you, <strong style={{ color: '#0F172A' }}>{name}</strong>! Our Bolt Motorcycles RE specialist will contact you shortly at <strong style={{ color: '#800000' }}>+91 {phone}</strong> to confirm your slot.
+              Thank you, <strong style={{ color: '#0F172A' }}>{name}</strong>! Our Bolt Motorcycles RE specialist will contact you shortly at <strong style={{ color: '#D32F2F' }}>+91 {phone}</strong> to confirm your slot.
             </Typography>
 
             <Paper
               elevation={0}
               sx={{
                 p: 2.5,
-                backgroundColor: '#F8F9FA',
-                border: '1px solid rgba(0, 0, 0, 0.1)',
+                backgroundColor: '#F8FAFC',
+                border: '1px solid #E2E8F0',
                 borderRadius: 3,
                 textAlign: 'left',
                 mb: 4,
               }}
             >
-              <Typography variant="subtitle2" sx={{ color: '#800000', fontWeight: 800, mb: 1 }}>
+              <Typography variant="subtitle2" sx={{ color: '#D32F2F', fontWeight: 800, mb: 1 }}>
                 Booking Summary:
               </Typography>
               <Typography variant="body2" sx={{ color: '#0F172A' }}>
@@ -187,7 +187,7 @@ export default function TestRideModal({
                 px: 4,
                 py: 1.5,
                 fontWeight: 800,
-                backgroundColor: '#800000',
+                background: 'linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%)',
                 color: '#FFFFFF',
               }}
             >
@@ -211,9 +211,9 @@ export default function TestRideModal({
                   sx={{
                     fontWeight: 800,
                     px: 1,
-                    backgroundColor: activeTab === 'test-ride' ? '#800000' : '#F8F9FA',
+                    backgroundColor: activeTab === 'test-ride' ? '#D32F2F' : '#F8FAFC',
                     color: activeTab === 'test-ride' ? '#FFFFFF' : '#0F172A',
-                    border: '1px solid #800000',
+                    border: '1px solid #D32F2F',
                   }}
                 />
                 <Chip
@@ -222,9 +222,9 @@ export default function TestRideModal({
                   sx={{
                     fontWeight: 800,
                     px: 1,
-                    backgroundColor: activeTab === 'quote' ? '#800000' : '#F8F9FA',
+                    backgroundColor: activeTab === 'quote' ? '#D32F2F' : '#F8FAFC',
                     color: activeTab === 'quote' ? '#FFFFFF' : '#0F172A',
-                    border: '1px solid #800000',
+                    border: '1px solid #D32F2F',
                   }}
                 />
                 <Chip
@@ -233,9 +233,9 @@ export default function TestRideModal({
                   sx={{
                     fontWeight: 800,
                     px: 1,
-                    backgroundColor: activeTab === 'service' ? '#800000' : '#F8F9FA',
+                    backgroundColor: activeTab === 'service' ? '#D32F2F' : '#F8FAFC',
                     color: activeTab === 'service' ? '#FFFFFF' : '#0F172A',
-                    border: '1px solid #800000',
+                    border: '1px solid #D32F2F',
                   }}
                 />
               </Stack>
@@ -277,7 +277,7 @@ export default function TestRideModal({
                     placeholder="10-digit mobile"
                     slotProps={{
                       input: {
-                        startAdornment: <Typography sx={{ color: '#800000', mr: 1, fontWeight: 700 }}>+91</Typography>,
+                        startAdornment: <Typography sx={{ color: '#D32F2F', mr: 1, fontWeight: 700 }}>+91</Typography>,
                       },
                     }}
                   />
@@ -338,9 +338,9 @@ export default function TestRideModal({
                   px: 4,
                   py: 1.2,
                   fontWeight: 800,
-                  backgroundColor: '#800000',
+                  background: 'linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%)',
                   color: '#FFFFFF',
-                  '&:hover': { backgroundColor: '#600000' },
+                  '&:hover': { background: 'linear-gradient(135deg, #B71C1C 0%, #8E0000 100%)' },
                 }}
               >
                 {loading ? 'Submitting...' : 'Confirm Request'}

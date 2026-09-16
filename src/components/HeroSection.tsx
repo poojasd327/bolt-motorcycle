@@ -8,13 +8,7 @@ import {
   Button,
   Grid,
   Stack,
-  Chip,
 } from '@mui/material';
-import TwoWheelerIcon from '@mui/icons-material/TwoWheeler';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import VerifiedIcon from '@mui/icons-material/Verified';
-import SpeedIcon from '@mui/icons-material/Speed';
-import ShieldCheckIcon from '@mui/icons-material/ShieldOutlined';
 import { dealershipData } from '../data/dealershipInfo';
 
 export default function HeroSection() {
@@ -22,159 +16,123 @@ export default function HeroSection() {
     <Box
       id="hero"
       sx={{
-        position: 'relative',
-        pt: { xs: 16, md: 22 },
-        pb: { xs: 12, md: 16 },
-        overflow: 'hidden',
-        minHeight: { md: '80vh' },
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        // Transparent airy overlay over full bleed background
-        backgroundImage: `linear-gradient(to right, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.45) 50%, rgba(255, 255, 255, 0.15) 100%), url("https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=2000&q=90")`,
+        backgroundColor: '#0F0F10',
+        backgroundImage: `url('/right.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
         backgroundAttachment: 'fixed',
+        color: '#FFFFFF',
+        position: 'relative',
+        height: '100dvh',
+        minHeight: '100dvh',
+        pt: { xs: 12, md: 14 },
+        pb: { xs: 6, md: 8 },
+        display: 'flex',
+        alignItems: 'center',
+        fontFamily: '"Nunito Sans", sans-serif',
       }}
     >
-      <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 2 }}>
-        <Grid container spacing={4} sx={{ alignItems: 'center' }}>
-          {/* Main Hero Column */}
-          <Grid size={{ xs: 12, md: 10, lg: 8.5 }}>
-            <Box>
-              {/* Trust Badges */}
-              <Stack direction="row" spacing={1.5} sx={{ mb: 3, flexWrap: 'wrap', gap: 1, alignItems: 'center' }}>
-                <Chip
-                  icon={<VerifiedIcon sx={{ color: '#800000 !important', fontSize: '18px !important' }} />}
-                  label={`ROYAL ENFIELD AUTHORISED • EST. ${dealershipData.foundedYear}`}
-                  sx={{
-                    backgroundColor: 'rgba(255, 255, 255, 0.85)',
-                    backdropFilter: 'blur(8px)',
-                    color: '#0F172A',
-                    border: '1px solid rgba(0, 0, 0, 0.12)',
-                    boxShadow: '0 2px 10px rgba(0,0,0,0.04)',
-                    py: 1.8,
-                    px: 0.5,
-                    fontWeight: 800,
-                    fontSize: { xs: '0.75rem', sm: '0.82rem' },
-                    letterSpacing: '0.04em',
-                  }}
-                />
-              </Stack>
+      <Container maxWidth="lg" sx={{ px: { xs: 3, sm: 5, md: 8 } }}>
+        <Box sx={{ maxWidth: '850px', ml: { md: -5 } }}>
+          {/* White Accent Line */}
+          <Box
+            sx={{
+              width: '70px',
+              height: '3px',
+              backgroundColor: '#FFFFFF',
+              mb: 4,
+              borderRadius: '2px',
+            }}
+          />
 
-              {/* Main Headline */}
-              <Typography
-                variant="h1"
-                sx={{
-                  fontSize: { xs: '2.5rem', sm: '3.8rem', md: '4.8rem' },
-                  fontWeight: 900,
-                  color: '#0F172A',
-                  textTransform: 'uppercase',
-                  lineHeight: 1.05,
-                  mb: 2.5,
-                  fontFamily: '"Outfit", sans-serif',
-                }}
-              >
-                FEEL THE THUMP.{' '}
-                <Box
-                  component="span"
-                  sx={{
-                    background: 'linear-gradient(135deg, #800000 0%, #A32A2A 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    display: 'inline-block',
-                  }}
-                >
-                  MASTER THE ROAD.
-                </Box>
-              </Typography>
+          {/* Main Headline */}
+          <Typography
+            variant="h1"
+            sx={{
+              fontSize: { xs: '2.2rem', sm: '2.8rem', md: '3.2rem' },
+              fontWeight: 800,
+              color: '#FFFFFF',
+              lineHeight: 1.15,
+              mb: 3,
+              fontFamily: '"Nunito Sans", sans-serif',
+            }}
+          >
+            Welcome to Bolt Motorcycles,
+            <Box component="br" sx={{ display: { xs: 'none', md: 'block' } }} />
+            your premier Royal Enfield
+            <Box component="br" sx={{ display: { xs: 'none', md: 'block' } }} />
+            dealership in Hyderabad
+          </Typography>
 
-              {/* Description */}
-              <Typography
-                variant="body1"
-                sx={{
-                  color: '#1E293B',
-                  fontSize: { xs: '1.05rem', sm: '1.25rem' },
-                  lineHeight: 1.7,
-                  mb: 4.5,
-                  maxWidth: '720px',
-                  fontWeight: 600,
-                  textShadow: '0 1px 2px rgba(255,255,255,0.8)',
-                }}
-              >
-                Welcome to <strong style={{ color: '#0F172A', textDecoration: 'underline decoration-color-#800000' }}>Bolt Motorcycles</strong>. Your premier authorized Royal Enfield dealership. Experience legendary motorcycling sales, certified express maintenance, genuine accessories, and finance solutions.
-              </Typography>
+          {/* Subtitle Description */}
+          <Typography
+            variant="body1"
+            sx={{
+              color: '#FFFFFF',
+              fontSize: { xs: '1rem', md: '1.15rem' },
+              lineHeight: 1.7,
+              mb: 5,
+              maxWidth: '680px',
+              fontWeight: 400,
+              fontFamily: '"Nunito Sans", sans-serif',
+            }}
+          >
+            Experience legendary motorcycling sales, certified express service bays, genuine Royal Enfield apparel & accessories, and easy low-ROI finance.
+          </Typography>
 
-              {/* Minimal Streamlined CTA */}
-              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2.5} sx={{ mb: 6 }}>
-                <Button
-                  variant="contained"
-                  size="large"
-                  component="a"
-                  href="#models"
-                  endIcon={<ArrowForwardIcon />}
-                  sx={{
-                    px: 4.5,
-                    py: 2,
-                    fontSize: '1.05rem',
-                    fontWeight: 800,
-                    boxShadow: '0 8px 25px rgba(128, 0, 0, 0.25)',
-                    backgroundColor: '#800000',
-                    color: '#FFFFFF',
-                    '&:hover': {
-                      backgroundColor: '#600000',
-                    },
-                  }}
-                >
-                  Explore All Bikes
-                </Button>
+          {/* Rounded Pill CTA Buttons */}
+          <Stack direction="row" spacing={2} sx={{ flexWrap: 'wrap', gap: 2 }}>
+            {/* Primary White Pill Button */}
+            <Button
+              component="a"
+              href="#models"
+              sx={{
+                backgroundColor: '#FFFFFF',
+                color: '#000000',
+                borderRadius: '50px',
+                px: 4,
+                py: 1.6,
+                fontSize: '0.95rem',
+                fontWeight: 800,
+                textTransform: 'none',
+                fontFamily: '"Nunito Sans", sans-serif',
+                boxShadow: '0 4px 15px rgba(255, 255, 255, 0.15)',
+                '&:hover': {
+                  backgroundColor: '#E2E8F0',
+                  color: '#000000',
+                },
+              }}
+            >
+              Browse bikes
+            </Button>
 
-                <Button
-                  variant="outlined"
-                  size="large"
-                  component="a"
-                  href={`https://wa.me/${dealershipData.whatsapp}?text=${encodeURIComponent('Hi Bolt Motorcycles, I would like to book a test ride for a Royal Enfield bike.')}`}
-                  target="_blank"
-                  startIcon={<TwoWheelerIcon />}
-                  sx={{
-                    px: 4,
-                    py: 2,
-                    fontSize: '1.05rem',
-                    fontWeight: 800,
-                    borderColor: '#0F172A',
-                    color: '#0F172A',
-                    backgroundColor: 'rgba(255, 255, 255, 0.75)',
-                    backdropFilter: 'blur(8px)',
-                    '&:hover': {
-                      borderColor: '#800000',
-                      color: '#800000',
-                      backgroundColor: '#FFFFFF',
-                    },
-                  }}
-                >
-                  Book Test Ride
-                </Button>
-              </Stack>
-
-              {/* Trust Indicators */}
-              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3} sx={{ pt: 3, borderTop: '1px solid rgba(0, 0, 0, 0.1)' }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  <ShieldCheckIcon sx={{ color: '#800000', fontSize: 24 }} />
-                  <Typography variant="body2" sx={{ fontWeight: 800, color: '#0F172A' }}>
-                    100% Genuine RE Parts & Accessories
-                  </Typography>
-                </Box>
-
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  <SpeedIcon sx={{ color: '#800000', fontSize: 24 }} />
-                  <Typography variant="body2" sx={{ fontWeight: 800, color: '#0F172A' }}>
-                    Authorized Express Service Bays
-                  </Typography>
-                </Box>
-              </Stack>
-            </Box>
-          </Grid>
-        </Grid>
+            {/* Secondary Translucent Glass Pill Button */}
+            <Button
+              component="a"
+              href={`https://wa.me/${dealershipData.whatsapp}?text=${encodeURIComponent('Hi Bolt Motorcycles, I would like to book a test ride.')}`}
+              target="_blank"
+              sx={{
+                backgroundColor: 'rgba(255, 255, 255, 0.12)',
+                color: '#FFFFFF',
+                border: '1px solid rgba(255, 255, 255, 0.25)',
+                borderRadius: '50px',
+                px: 4,
+                py: 1.6,
+                fontSize: '0.95rem',
+                fontWeight: 800,
+                textTransform: 'none',
+                fontFamily: '"Nunito Sans", sans-serif',
+                backdropFilter: 'blur(8px)',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.22)',
+                  borderColor: '#FFFFFF',
+                },
+              }}
+            >
+              Book Test Ride
+            </Button>
+          </Stack>
+        </Box>
       </Container>
     </Box>
   );

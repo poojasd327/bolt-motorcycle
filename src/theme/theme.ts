@@ -6,29 +6,29 @@ let theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#800000', // Crimson Burgundy Accent
-      light: '#A32A2A',
-      dark: '#550000',
+      main: '#000000', // Black Accent
+      light: '#262626',
+      dark: '#000000',
       contrastText: '#FFFFFF',
     },
     secondary: {
-      main: '#1E293B', // Slate Dark
-      light: '#334155',
-      dark: '#0F172A',
+      main: '#18181B', // Dark Charcoal
+      light: '#3F3F46',
+      dark: '#09090B',
       contrastText: '#FFFFFF',
     },
     background: {
-      default: '#FFFFFF', // Pure White Theme
-      paper: '#FFFFFF',   // Pure White Cards
+      default: '#FFFFFF',
+      paper: '#FFFFFF',
     },
     text: {
-      primary: '#0F172A', // Crisp Dark Slate Text
-      secondary: '#475569', // Subtle Slate Subtext
+      primary: '#0F172A',
+      secondary: '#475569',
     },
-    divider: 'rgba(0, 0, 0, 0.08)',
+    divider: '#E2E8F0',
   },
   typography: {
-    fontFamily: '"Outfit", "Inter", -apple-system, sans-serif',
+    fontFamily: '"Nunito Sans", -apple-system, BlinkMacSystemFont, sans-serif',
     h1: {
       fontWeight: 900,
       letterSpacing: '-0.025em',
@@ -71,6 +71,7 @@ let theme = createTheme({
         body: {
           backgroundColor: '#FFFFFF !important',
           color: '#0F172A !important',
+          fontFamily: '"Nunito Sans", sans-serif !important',
         },
       },
     },
@@ -82,26 +83,27 @@ let theme = createTheme({
           fontSize: '0.95rem',
           fontWeight: 700,
           boxShadow: 'none',
+          fontFamily: '"Nunito Sans", sans-serif',
           transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
           '&:hover': {
-            boxShadow: '0 8px 25px rgba(128, 0, 0, 0.2)',
+            boxShadow: '0 8px 25px rgba(0, 0, 0, 0.2)',
             transform: 'translateY(-2px)',
           },
         },
         contained: {
-          background: 'linear-gradient(135deg, #800000 0%, #A32A2A 100%)',
+          background: '#000000',
           color: '#FFFFFF',
           fontWeight: 800,
           '&:hover': {
-            background: 'linear-gradient(135deg, #600000 0%, #800000 100%)',
+            background: '#262626',
           },
         },
         outlined: {
-          borderColor: '#800000',
-          color: '#800000',
+          borderColor: '#000000',
+          color: '#000000',
           '&:hover': {
-            borderColor: '#550000',
-            backgroundColor: 'rgba(128, 0, 0, 0.05)',
+            borderColor: '#262626',
+            backgroundColor: 'rgba(0, 0, 0, 0.05)',
           },
         },
       },
@@ -112,12 +114,12 @@ let theme = createTheme({
           backgroundColor: '#FFFFFF',
           backgroundImage: 'none',
           borderRadius: 18,
-          border: '1px solid rgba(0, 0, 0, 0.08)',
-          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
+          border: '1px solid #E2E8F0',
+          boxShadow: '0 4px 20px rgba(15, 23, 42, 0.04)',
           transition: 'all 0.3s ease',
           '&:hover': {
-            borderColor: '#800000',
-            boxShadow: '0 12px 32px rgba(128, 0, 0, 0.12)',
+            borderColor: '#000000',
+            boxShadow: '0 12px 32px rgba(0, 0, 0, 0.12)',
           },
         },
       },
@@ -128,76 +130,6 @@ let theme = createTheme({
           backgroundColor: '#FFFFFF',
           backgroundImage: 'none',
           color: '#0F172A',
-        },
-      },
-    },
-    MuiDialog: {
-      styleOverrides: {
-        paper: {
-          backgroundColor: '#FFFFFF !important',
-          backgroundImage: 'none !important',
-          border: '1px solid rgba(0, 0, 0, 0.1)',
-          boxShadow: '0 25px 60px rgba(0, 0, 0, 0.15)',
-        },
-      },
-    },
-    MuiTextField: {
-      styleOverrides: {
-        root: {
-          '& .MuiOutlinedInput-root': {
-            backgroundColor: '#F8F9FA',
-            color: '#0F172A',
-            borderRadius: 12,
-            '& fieldset': {
-              borderColor: 'rgba(0, 0, 0, 0.12)',
-            },
-            '&:hover fieldset': {
-              borderColor: '#800000',
-            },
-            '&.Mui-focused fieldset': {
-              borderColor: '#800000',
-            },
-          },
-          '& .MuiInputLabel-root': {
-            color: '#475569',
-            '&.Mui-focused': {
-              color: '#800000',
-            },
-          },
-        },
-      },
-    },
-    MuiMenu: {
-      styleOverrides: {
-        paper: {
-          backgroundColor: '#FFFFFF !important',
-          border: '1px solid rgba(0, 0, 0, 0.08)',
-          color: '#0F172A',
-          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)',
-        },
-      },
-    },
-    MuiMenuItem: {
-      styleOverrides: {
-        root: {
-          color: '#0F172A',
-          '&:hover': {
-            backgroundColor: 'rgba(128, 0, 0, 0.06)',
-            color: '#800000',
-          },
-          '&.Mui-selected': {
-            backgroundColor: 'rgba(128, 0, 0, 0.12)',
-            color: '#800000',
-            fontWeight: 700,
-          },
-        },
-      },
-    },
-    MuiChip: {
-      styleOverrides: {
-        root: {
-          fontWeight: 700,
-          borderRadius: 8,
         },
       },
     },

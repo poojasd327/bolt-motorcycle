@@ -6,29 +6,22 @@ import {
   Box,
   Typography,
   Grid,
-  Paper,
   TextField,
   Button,
   Stack,
-  Chip,
   Alert,
-  MenuItem,
 } from '@mui/material';
-import PhoneIcon from '@mui/icons-material/Phone';
-import EmailIcon from '@mui/icons-material/Email';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import SendIcon from '@mui/icons-material/Send';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { dealershipData } from '../data/dealershipInfo';
-import { motorcycles } from '../data/motorcycles';
 
 export default function ContactSection() {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
-  const [interestedBike, setInterestedBike] = useState('General Enquiry');
+  const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -47,330 +40,334 @@ export default function ContactSection() {
     <Box
       id="contact"
       sx={{
-        py: { xs: 10, md: 14 },
+        py: { xs: 8, md: 14 },
         backgroundColor: '#FFFFFF',
         position: 'relative',
-        borderTop: '1px solid rgba(0, 0, 0, 0.08)',
+        overflow: 'hidden',
+        fontFamily: '"Nunito Sans", sans-serif',
       }}
     >
-      <Container maxWidth="xl">
-        <Box sx={{ textAlign: 'center', mb: 8 }}>
-          <Chip
-            icon={<PhoneIcon sx={{ color: '#800000 !important' }} />}
-            label="WE ARE HERE TO HELP"
-            sx={{
-              backgroundColor: 'rgba(128, 0, 0, 0.08)',
-              color: '#800000',
-              fontWeight: 800,
-              mb: 2,
-              letterSpacing: '0.08em',
-              border: '1px solid rgba(128, 0, 0, 0.2)',
-            }}
-          />
-          <Typography
-            variant="h2"
-            sx={{
-              fontWeight: 900,
-              color: '#0F172A',
-              fontFamily: '"Outfit", sans-serif',
-              fontSize: { xs: '2rem', sm: '2.8rem', md: '3.3rem' },
-              mb: 2,
-            }}
-          >
-            CONNECT WITH <Box component="span" sx={{ color: '#800000' }}>BOLT MOTORCYCLES</Box>
-          </Typography>
-          <Typography variant="body1" sx={{ color: '#475569', maxWidth: '700px', mx: 'auto', fontSize: '1.05rem' }}>
-            Have questions about buying a Royal Enfield, booking a service appointment, or pricing? Reach out to our team directly.
-          </Typography>
-        </Box>
-
-        <Grid container spacing={5}>
-          {/* Dealership Info Card */}
-          <Grid size={{ xs: 12, lg: 5 }}>
-            <Paper
-              elevation={0}
-              sx={{
-                p: { xs: 3, sm: 5 },
-                height: '100%',
-                backgroundColor: '#F8F9FA',
-                borderRadius: 4,
-                border: '1px solid rgba(0, 0, 0, 0.08)',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-              }}
-            >
-              <Box>
-                <Typography variant="h5" sx={{ fontWeight: 800, color: '#0F172A', mb: 1 }}>
-                  Bolt Motorcycles Dealership
-                </Typography>
-                <Typography variant="body2" sx={{ color: '#800000', fontWeight: 700, mb: 4 }}>
-                  Authorised Royal Enfield Sales, Service & Spares
-                </Typography>
-
-                <Stack spacing={3.5} sx={{ mb: 4 }}>
-                  {/* Phone */}
-                  <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2 }}>
-                    <Box
-                      sx={{
-                        p: 1.2,
-                        borderRadius: 2,
-                        backgroundColor: 'rgba(128, 0, 0, 0.08)',
-                        border: '1px solid rgba(128, 0, 0, 0.2)',
-                      }}
-                    >
-                      <PhoneIcon sx={{ color: '#800000' }} />
-                    </Box>
-                    <Box>
-                      <Typography variant="caption" sx={{ color: '#475569', display: 'block' }}>
-                        Call Showroom / Service Hotline
-                      </Typography>
-                      <Typography
-                        variant="h6"
-                        component="a"
-                        href={`tel:${dealershipData.phoneRaw}`}
-                        sx={{
-                          color: '#0F172A',
-                          fontWeight: 800,
-                          textDecoration: 'none',
-                          '&:hover': { color: '#800000' },
-                        }}
-                      >
-                        {dealershipData.phone}
-                      </Typography>
-                    </Box>
-                  </Box>
-
-                  {/* Email */}
-                  <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2 }}>
-                    <Box
-                      sx={{
-                        p: 1.2,
-                        borderRadius: 2,
-                        backgroundColor: 'rgba(128, 0, 0, 0.08)',
-                        border: '1px solid rgba(128, 0, 0, 0.2)',
-                      }}
-                    >
-                      <EmailIcon sx={{ color: '#800000' }} />
-                    </Box>
-                    <Box>
-                      <Typography variant="caption" sx={{ color: '#475569', display: 'block' }}>
-                        Official Email
-                      </Typography>
-                      <Typography
-                        variant="subtitle1"
-                        component="a"
-                        href={`mailto:${dealershipData.email}`}
-                        sx={{
-                          color: '#0F172A',
-                          fontWeight: 700,
-                          textDecoration: 'none',
-                          '&:hover': { color: '#800000' },
-                        }}
-                      >
-                        {dealershipData.email}
-                      </Typography>
-                    </Box>
-                  </Box>
-
-                  {/* Business Hours */}
-                  <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2 }}>
-                    <Box
-                      sx={{
-                        p: 1.2,
-                        borderRadius: 2,
-                        backgroundColor: 'rgba(128, 0, 0, 0.08)',
-                        border: '1px solid rgba(128, 0, 0, 0.2)',
-                      }}
-                    >
-                      <AccessTimeIcon sx={{ color: '#800000' }} />
-                    </Box>
-                    <Box>
-                      <Typography variant="caption" sx={{ color: '#475569', display: 'block' }}>
-                        Showroom & Workshop Timings
-                      </Typography>
-                      <Typography variant="body2" sx={{ color: '#0F172A', fontWeight: 600 }}>
-                        {dealershipData.businessHours.weekdays}
-                      </Typography>
-                      <Typography variant="body2" sx={{ color: '#475569' }}>
-                        {dealershipData.businessHours.sunday}
-                      </Typography>
-                    </Box>
-                  </Box>
-
-                  {/* Address */}
-                  <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2 }}>
-                    <Box
-                      sx={{
-                        p: 1.2,
-                        borderRadius: 2,
-                        backgroundColor: 'rgba(128, 0, 0, 0.08)',
-                        border: '1px solid rgba(128, 0, 0, 0.2)',
-                      }}
-                    >
-                      <LocationOnIcon sx={{ color: '#800000' }} />
-                    </Box>
-                    <Box>
-                      <Typography variant="caption" sx={{ color: '#475569', display: 'block' }}>
-                        Showroom Location
-                      </Typography>
-                      <Typography variant="body2" sx={{ color: '#0F172A', fontWeight: 600 }}>
-                        {dealershipData.address.street}, {dealershipData.address.city}
-                      </Typography>
-                      <Typography variant="caption" sx={{ color: '#475569' }}>
-                        {dealershipData.address.landmark} • {dealershipData.address.pincode}
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Stack>
-              </Box>
-
-              {/* Direct WhatsApp Action */}
-              <Button
-                variant="contained"
-                fullWidth
-                component="a"
-                href={`https://wa.me/${dealershipData.whatsapp}?text=Hi%20Bolt%20Motorcycles,%20I%20would%20like%20to%20enquire%20about%20Royal%20Enfield%20bikes.`}
-                target="_blank"
-                startIcon={<WhatsAppIcon />}
+      <Container maxWidth="lg" sx={{ px: { xs: 3, sm: 5, md: 8 }, mx: 'auto' }}>
+        <Grid container spacing={{ xs: 6, lg: 8 }} sx={{ alignItems: 'stretch' }}>
+          {/* Left Side: Clean Minimalist Contact Form */}
+          <Grid size={{ xs: 12, md: 6.5, lg: 6 }}>
+            <Box sx={{ pr: { md: 4 } }}>
+              <Typography
+                variant="h2"
                 sx={{
-                  py: 1.6,
-                  backgroundColor: '#25D366',
-                  color: '#FFFFFF',
-                  fontWeight: 800,
-                  '&:hover': { backgroundColor: '#1EBE5D' },
+                  fontWeight: 900,
+                  color: '#0F172A',
+                  fontFamily: '"Nunito Sans", sans-serif',
+                  fontSize: { xs: '2.2rem', sm: '2.8rem', md: '3.3rem' },
+                  mb: 1.5,
+                  lineHeight: 1.15,
                 }}
               >
-                Chat on WhatsApp Now
-              </Button>
-            </Paper>
-          </Grid>
-
-          {/* Enquiry Form */}
-          <Grid size={{ xs: 12, lg: 7 }}>
-            <Paper
-              elevation={0}
-              sx={{
-                p: { xs: 3, sm: 5 },
-                backgroundColor: '#F8F9FA',
-                borderRadius: 4,
-                border: '1px solid rgba(0, 0, 0, 0.08)',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
-              }}
-            >
-              <Typography variant="h5" sx={{ fontWeight: 800, color: '#0F172A', mb: 1 }}>
-                Send Us a Message
+                Contact Us
               </Typography>
-              <Typography variant="body2" sx={{ color: '#475569', mb: 4 }}>
-                Fill out the form below and our customer relationship team will reach out within 2 hours.
+
+              <Typography
+                variant="body1"
+                sx={{
+                  color: '#64748B',
+                  fontSize: '1.05rem',
+                  lineHeight: 1.6,
+                  fontFamily: '"Nunito Sans", sans-serif',
+                  mb: 5,
+                }}
+              >
+                Feel free to contact us any time. We will get back to you as soon as we can!
               </Typography>
 
               {sent ? (
                 <Alert
-                  icon={<CheckCircleIcon fontSize="inherit" sx={{ color: '#15803D' }} />}
+                  icon={<CheckCircleIcon fontSize="inherit" sx={{ color: '#000000' }} />}
                   severity="success"
-                  sx={{ p: 3, borderRadius: 3, backgroundColor: 'rgba(21, 128, 61, 0.08)', color: '#0F172A' }}
+                  sx={{
+                    p: 3,
+                    borderRadius: 2,
+                    backgroundColor: '#F4F4F6',
+                    color: '#0F172A',
+                    border: '1px solid #E2E8F0',
+                  }}
                 >
-                  <Typography variant="h6" sx={{ fontWeight: 800, mb: 0.5, color: '#0F172A' }}>
+                  <Typography
+                    variant="h6"
+                    sx={{ fontWeight: 800, mb: 0.5, color: '#0F172A', fontFamily: '"Nunito Sans", sans-serif' }}
+                  >
                     Message Received!
                   </Typography>
-                  <Typography variant="body2">
+                  <Typography variant="body2" sx={{ fontFamily: '"Nunito Sans", sans-serif' }}>
                     Thank you, {name}! Our team at Bolt Motorcycles will call you at +91 {phone} shortly.
                   </Typography>
                 </Alert>
               ) : (
                 <form onSubmit={handleSubmit}>
-                  <Grid container spacing={2.5}>
-                    <Grid size={{ xs: 12, sm: 6 }}>
-                      <TextField
-                        label="Your Name"
-                        fullWidth
-                        required
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                      />
-                    </Grid>
-                    <Grid size={{ xs: 12, sm: 6 }}>
-                      <TextField
-                        label="Phone Number"
-                        fullWidth
-                        required
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        slotProps={{
-                          input: {
-                            startAdornment: <Typography sx={{ color: '#800000', mr: 1, fontWeight: 700 }}>+91</Typography>,
+                  <Stack spacing={3.5}>
+                    <TextField
+                      variant="standard"
+                      placeholder="Name"
+                      required
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      slotProps={{
+                        input: {
+                          disableUnderline: false,
+                          sx: {
+                            fontSize: '1rem',
+                            fontFamily: '"Nunito Sans", sans-serif',
+                            py: 1,
+                            color: '#0F172A',
+                            '&:before': { borderColor: '#E2E8F0' },
+                            '&:after': { borderColor: '#D32F2F' },
+                          },
+                        },
+                      }}
+                    />
+
+                    <TextField
+                      variant="standard"
+                      placeholder="Email"
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      slotProps={{
+                        input: {
+                          disableUnderline: false,
+                          sx: {
+                            fontSize: '1rem',
+                            fontFamily: '"Nunito Sans", sans-serif',
+                            py: 1,
+                            color: '#0F172A',
+                            '&:before': { borderColor: '#E2E8F0' },
+                            '&:after': { borderColor: '#D32F2F' },
+                          },
+                        },
+                      }}
+                    />
+
+                    <TextField
+                      variant="standard"
+                      placeholder="Phone Number"
+                      required
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      slotProps={{
+                        input: {
+                          disableUnderline: false,
+                          sx: {
+                            fontSize: '1rem',
+                            fontFamily: '"Nunito Sans", sans-serif',
+                            py: 1,
+                            color: '#0F172A',
+                            '&:before': { borderColor: '#E2E8F0' },
+                            '&:after': { borderColor: '#D32F2F' },
+                          },
+                        },
+                      }}
+                    />
+
+                    <TextField
+                      variant="standard"
+                      placeholder="Message"
+                      multiline
+                      rows={3}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      slotProps={{
+                        input: {
+                          disableUnderline: false,
+                          sx: {
+                            fontSize: '1rem',
+                            fontFamily: '"Nunito Sans", sans-serif',
+                            py: 1,
+                            color: '#0F172A',
+                            '&:before': { borderColor: '#E2E8F0' },
+                            '&:after': { borderColor: '#D32F2F' },
+                          },
+                        },
+                      }}
+                    />
+
+                    <Box sx={{ pt: 2 }}>
+                      <Button
+                        type="submit"
+                        disabled={loading}
+                        sx={{
+                          backgroundColor: '#121212',
+                          color: '#FFFFFF',
+                          fontWeight: 800,
+                          fontSize: '0.9rem',
+                          fontFamily: '"Nunito Sans", sans-serif',
+                          letterSpacing: '0.12em',
+                          px: 6,
+                          py: 1.6,
+                          borderRadius: '4px',
+                          boxShadow: 'none',
+                          '&:hover': {
+                            backgroundColor: '#262626',
+                            boxShadow: '0 6px 18px rgba(0, 0, 0, 0.15)',
                           },
                         }}
-                      />
-                    </Grid>
-
-                    <Grid size={{ xs: 12, sm: 6 }}>
-                      <TextField
-                        label="Email Address"
-                        fullWidth
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                      />
-                    </Grid>
-
-                    <Grid size={{ xs: 12, sm: 6 }}>
-                      <TextField
-                        select
-                        label="Interested Motorcycle / Service"
-                        fullWidth
-                        value={interestedBike}
-                        onChange={(e) => setInterestedBike(e.target.value)}
                       >
-                        <MenuItem value="General Enquiry">General Enquiry</MenuItem>
-                        {motorcycles.map((m) => (
-                          <MenuItem key={m.id} value={m.name}>
-                            {m.name}
-                          </MenuItem>
-                        ))}
-                        <MenuItem value="Authorised Service">Authorised Service & Repairs</MenuItem>
-                        <MenuItem value="Exchange / Trade-in">Bike Exchange / Trade-in</MenuItem>
-                      </TextField>
-                    </Grid>
-
-                    <Grid size={{ xs: 12 }}>
-                      <TextField
-                        label="Your Message or Special Request"
-                        fullWidth
-                        multiline
-                        rows={4}
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                        placeholder="Mention any specific color preference, test ride date, or questions..."
-                      />
-                    </Grid>
-                  </Grid>
-
-                  <Box sx={{ mt: 4 }}>
-                    <Button
-                      type="submit"
-                      variant="contained"
-                      size="large"
-                      disabled={loading}
-                      startIcon={<SendIcon />}
-                      sx={{
-                        px: 5,
-                        py: 1.8,
-                        fontSize: '1rem',
-                        fontWeight: 800,
-                        backgroundColor: '#800000',
-                        color: '#FFFFFF',
-                        '&:hover': { backgroundColor: '#600000' },
-                      }}
-                    >
-                      {loading ? 'Sending...' : 'Send Enquiry'}
-                    </Button>
-                  </Box>
+                        {loading ? 'SENDING...' : 'SEND'}
+                      </Button>
+                    </Box>
+                  </Stack>
                 </form>
               )}
-            </Paper>
+            </Box>
+          </Grid>
+
+          {/* Right Side: Overlapping Dark Info Card with Red Geometry Accent */}
+          <Grid size={{ xs: 12, md: 5.5, lg: 6 }}>
+            <Box
+              sx={{
+                position: 'relative',
+                height: '100%',
+                minHeight: '440px',
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
+              {/* Red Geometry Accent Block - Top Right */}
+              <Box
+                sx={{
+                  position: 'absolute',
+                  top: 0,
+                  right: 0,
+                  width: '35%',
+                  height: '40%',
+                  backgroundColor: '#D32F2F', // Red accent replacing yellow
+                  zIndex: 1,
+                }}
+              />
+
+              {/* Red Geometry Accent Block - Bottom Right */}
+              <Box
+                sx={{
+                  position: 'absolute',
+                  bottom: 0,
+                  right: 0,
+                  width: '35%',
+                  height: '35%',
+                  backgroundColor: '#D32F2F', // Red accent replacing yellow
+                  zIndex: 1,
+                }}
+              />
+
+              {/* Small Red Square Accent - Top Left of Info Card */}
+              <Box
+                sx={{
+                  position: 'absolute',
+                  top: { xs: 10, md: 24 },
+                  left: { xs: -10, md: -20 },
+                  width: 32,
+                  height: 32,
+                  backgroundColor: '#D32F2F', // Red accent replacing yellow
+                  zIndex: 3,
+                }}
+              />
+
+              {/* Dark Info Card */}
+              <Box
+                sx={{
+                  position: 'relative',
+                  zIndex: 2,
+                  backgroundColor: '#18181A',
+                  color: '#FFFFFF',
+                  width: '100%',
+                  mr: { md: 4 },
+                  p: { xs: 4, sm: 6 },
+                  borderRadius: '4px',
+                  boxShadow: '0 20px 50px rgba(0, 0, 0, 0.25)',
+                }}
+              >
+                <Typography
+                  variant="h3"
+                  sx={{
+                    fontWeight: 800,
+                    color: '#FFFFFF',
+                    fontFamily: '"Nunito Sans", sans-serif',
+                    fontSize: '2.2rem',
+                    mb: 4,
+                  }}
+                >
+                  Info
+                </Typography>
+
+                <Stack spacing={3.5}>
+                  {/* Email */}
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 2.5 }}>
+                    <EmailOutlinedIcon sx={{ color: '#FFFFFF', fontSize: 28 }} />
+                    <Typography
+                      component="a"
+                      href={`mailto:${dealershipData.email}`}
+                      sx={{
+                        color: '#FFFFFF',
+                        fontWeight: 600,
+                        fontSize: '1.05rem',
+                        fontFamily: '"Nunito Sans", sans-serif',
+                        textDecoration: 'none',
+                        '&:hover': { color: '#E4E4E7', textDecoration: 'underline' },
+                      }}
+                    >
+                      {dealershipData.email}
+                    </Typography>
+                  </Box>
+
+                  {/* Phone */}
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 2.5 }}>
+                    <PhoneOutlinedIcon sx={{ color: '#FFFFFF', fontSize: 28 }} />
+                    <Typography
+                      component="a"
+                      href={`tel:${dealershipData.phoneRaw}`}
+                      sx={{
+                        color: '#FFFFFF',
+                        fontWeight: 600,
+                        fontSize: '1.05rem',
+                        fontFamily: '"Nunito Sans", sans-serif',
+                        textDecoration: 'none',
+                        '&:hover': { color: '#E4E4E7', textDecoration: 'underline' },
+                      }}
+                    >
+                      {dealershipData.phone}
+                    </Typography>
+                  </Box>
+
+                  {/* Address */}
+                  <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2.5 }}>
+                    <LocationOnOutlinedIcon sx={{ color: '#FFFFFF', fontSize: 28, mt: 0.3 }} />
+                    <Typography
+                      sx={{
+                        color: '#FFFFFF',
+                        fontWeight: 600,
+                        fontSize: '1rem',
+                        fontFamily: '"Nunito Sans", sans-serif',
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      {dealershipData.address.street}, {dealershipData.address.city}, {dealershipData.address.pincode}
+                    </Typography>
+                  </Box>
+
+                  {/* Business Hours */}
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 2.5 }}>
+                    <AccessTimeOutlinedIcon sx={{ color: '#FFFFFF', fontSize: 28 }} />
+                    <Typography
+                      sx={{
+                        color: '#FFFFFF',
+                        fontWeight: 600,
+                        fontSize: '1rem',
+                        fontFamily: '"Nunito Sans", sans-serif',
+                      }}
+                    >
+                      {dealershipData.businessHours.weekdays}
+                    </Typography>
+                  </Box>
+                </Stack>
+              </Box>
+            </Box>
           </Grid>
         </Grid>
       </Container>
