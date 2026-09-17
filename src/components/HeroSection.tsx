@@ -17,8 +17,8 @@ export default function HeroSection() {
       id="hero"
       sx={{
         backgroundImage: {
-          xs: `url('/bolt_mob.png')`,
-          md: `linear-gradient(rgba(15, 15, 16, 0.35), rgba(15, 15, 16, 0.45)), url('/right.jpg')`,
+          xs: `url('/bolt-motorcycle/images/bolt_mob.png')`,
+          md: `linear-gradient(rgba(15, 15, 16, 0.35), rgba(15, 15, 16, 0.45)), url('/bolt-motorcycle/images/right.jpg')`,
         },
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
