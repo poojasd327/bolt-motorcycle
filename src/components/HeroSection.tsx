@@ -44,7 +44,7 @@ export default function HeroSection() {
             maxWidth: '850px',
             mx: { xs: 'auto', md: 0 },
             textAlign: { xs: 'center', md: 'left' },
-            transform: 'translateY(-80px)',
+            transform: { xs: 'translateY(-80px)', md: 'translateY(-30px)' },
           }}
         >
           {/* White Accent Line */}
