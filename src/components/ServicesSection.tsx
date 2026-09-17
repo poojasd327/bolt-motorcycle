@@ -40,11 +40,10 @@ export default function ServicesSection() {
         py: { xs: 8, md: 12 },
         backgroundColor: '#FFFFFF',
         position: 'relative',
-        borderBottom: '1px solid #E2E8F0',
         fontFamily: '"Nunito Sans", sans-serif',
       }}
     >
-      <Container maxWidth="lg" sx={{ px: { xs: 3, sm: 5, md: 8 } }}>
+      <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 3 } }}>
         {/* Section Header (Centered) */}
         <Box sx={{ textAlign: 'center', mb: 7, maxWidth: '750px', mx: 'auto' }}>
           <Typography
@@ -90,9 +89,9 @@ export default function ServicesSection() {
         </Box>
 
         {/* Bento Grid Layout */}
-        <Grid container spacing={3} sx={{ alignItems: 'stretch' }}>
+        <Grid container spacing={3} sx={{ alignItems: 'stretch', flexDirection: { xs: 'column', md: 'row' } }}>
           {/* Left Side: Tall Feature Image Card */}
-          <Grid size={{ xs: 12, md: 4 }}>
+          <Grid size={{ xs: 12, sm: 12, md: 4 }}>
             <Box
               sx={{
                 position: 'relative',
@@ -166,17 +165,17 @@ export default function ServicesSection() {
           </Grid>
 
           {/* Right Side: 2x2 Grid of Cards */}
-          <Grid size={{ xs: 12, md: 8 }}>
-            <Grid container spacing={3} sx={{ height: '100%' }}>
+          <Grid size={{ xs: 12, sm: 12, md: 8 }}>
+            <Grid container spacing={3} sx={{ height: { xs: 'auto', md: '100%' }, flexDirection: { xs: 'column', md: 'row' } }}>
               {/* Card 1: Top Left */}
-              <Grid size={{ xs: 12, sm: 6 }}>
+              <Grid size={{ xs: 12, sm: 12, md: 6 }}>
                 <Box
                   sx={{
                     backgroundColor: '#FFFFFF',
                     borderRadius: '20px',
                     p: 4,
                     height: '100%',
-                    minHeight: '220px',
+                    minHeight: { xs: 'auto', md: '220px' },
                     border: '1px solid #E2E8F0',
                     boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
                     display: 'flex',
@@ -237,14 +236,14 @@ export default function ServicesSection() {
               </Grid>
 
               {/* Card 2: Top Right */}
-              <Grid size={{ xs: 12, sm: 6 }}>
+              <Grid size={{ xs: 12, sm: 12, md: 6 }}>
                 <Box
                   sx={{
                     backgroundColor: '#FFFFFF',
                     borderRadius: '20px',
                     p: 4,
                     height: '100%',
-                    minHeight: '220px',
+                    minHeight: { xs: 'auto', md: '220px' },
                     border: '1px solid #E2E8F0',
                     boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
                     display: 'flex',
@@ -306,14 +305,14 @@ export default function ServicesSection() {
               </Grid>
 
               {/* Card 3: Bottom Left */}
-              <Grid size={{ xs: 12, sm: 6 }}>
+              <Grid size={{ xs: 12, sm: 12, md: 6 }}>
                 <Box
                   sx={{
                     backgroundColor: '#FFFFFF',
                     borderRadius: '20px',
                     p: 4,
                     height: '100%',
-                    minHeight: '220px',
+                    minHeight: { xs: 'auto', md: '220px' },
                     border: '1px solid #E2E8F0',
                     boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
                     display: 'flex',
@@ -375,14 +374,14 @@ export default function ServicesSection() {
               </Grid>
 
               {/* Card 4: Bottom Right Image Card with Content Overlay */}
-              <Grid size={{ xs: 12, sm: 6 }}>
+              <Grid size={{ xs: 12, sm: 12, md: 6 }}>
                 <Box
                   sx={{
                     position: 'relative',
                     borderRadius: '20px',
                     overflow: 'hidden',
                     height: '100%',
-                    minHeight: '220px',
+                    minHeight: { xs: '240px', md: '220px' },
                     border: '1px solid #E2E8F0',
                     boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
                     backgroundImage: `url('https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=800&q=80')`,

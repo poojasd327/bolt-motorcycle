@@ -36,7 +36,7 @@ export const motorcycles: Motorcycle[] = [
     mileage: '36.2 kmpl',
     weight: '181 kg',
     fuelCapacity: '13 L',
-    imageUrl: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/bikes/hunter_350.avif',
     featured: true,
     colors: [
       { name: 'Dapper White', hex: '#EAEAEA' },
@@ -61,7 +61,7 @@ export const motorcycles: Motorcycle[] = [
     mileage: '35 kmpl',
     weight: '195 kg',
     fuelCapacity: '13 L',
-    imageUrl: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/bikes/classic 350.jpeg',
     featured: true,
     colors: [
       { name: 'Chrome Red', hex: '#8B0000' },
@@ -86,7 +86,7 @@ export const motorcycles: Motorcycle[] = [
     mileage: '30 kmpl',
     weight: '196 kg',
     fuelCapacity: '17 L',
-    imageUrl: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/bikes/himalayan_450.jpeg',
     featured: true,
     colors: [
       { name: 'Hanle Black', hex: '#191919' },
@@ -111,7 +111,7 @@ export const motorcycles: Motorcycle[] = [
     mileage: '37 kmpl',
     weight: '195 kg',
     fuelCapacity: '13 L',
-    imageUrl: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/bikes/bullet_350.jpeg',
     featured: false,
     colors: [
       { name: 'Black Gold', hex: '#B8860B' },
@@ -135,7 +135,7 @@ export const motorcycles: Motorcycle[] = [
     mileage: '35 kmpl',
     weight: '191 kg',
     fuelCapacity: '15 L',
-    imageUrl: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/bikes/meteor_350.jpeg',
     featured: true,
     colors: [
       { name: 'Supernova Gold', hex: '#DAA520' },
@@ -160,7 +160,7 @@ export const motorcycles: Motorcycle[] = [
     mileage: '25 kmpl',
     weight: '214 kg',
     fuelCapacity: '12.5 L',
-    imageUrl: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/bikes/continental gt 360.jpeg',
     featured: true,
     colors: [
       { name: 'Mr Clean Chrome', hex: '#DCDCDC' },
@@ -185,7 +185,7 @@ export const motorcycles: Motorcycle[] = [
     mileage: '25 kmpl',
     weight: '217 kg',
     fuelCapacity: '13.7 L',
-    imageUrl: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/bikes/interceptor 360.jpeg',
     featured: false,
     colors: [
       { name: 'Mark 2 Chrome', hex: '#E0E0E0' },
@@ -210,7 +210,7 @@ export const motorcycles: Motorcycle[] = [
     mileage: '24 kmpl',
     weight: '240 kg',
     fuelCapacity: '13.8 L',
-    imageUrl: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/bikes/shotgun_650.jpeg',
     featured: false,
     colors: [
       { name: 'Stencil White', hex: '#F0F0F0' },

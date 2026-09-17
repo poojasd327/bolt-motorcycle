@@ -19,7 +19,7 @@ export default function AboutSection() {
         fontFamily: '"Nunito Sans", sans-serif',
       }}
     >
-      <Container maxWidth="lg" sx={{ px: { xs: 3, sm: 5, md: 8 } }}>
+      <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 3 } }}>
         {/* Header Section */}
         <Box
           sx={{
@@ -84,17 +84,15 @@ export default function AboutSection() {
             {cards.map((card, idx) => (
               <Grid
                 key={idx}
-                size={{ xs: 12, sm: 6, md: 3 }}
+                size={{ xs: 12, sm: 12, md: 3 }}
                 sx={{
                   p: { xs: 3.5, md: 4.5 },
                   borderRight: {
                     xs: 'none',
-                    sm: idx % 2 === 0 ? '1px solid #27272A' : 'none',
                     md: idx < 3 ? '1px solid #27272A' : 'none',
                   },
                   borderBottom: {
                     xs: idx < 3 ? '1px solid #27272A' : 'none',
-                    sm: idx < 2 ? '1px solid #27272A' : 'none',
                     md: 'none',
                   },
                   display: 'flex',

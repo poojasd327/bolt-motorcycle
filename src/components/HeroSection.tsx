@@ -16,11 +16,17 @@ export default function HeroSection() {
     <Box
       id="hero"
       sx={{
-        backgroundColor: '#0F0F10',
-        backgroundImage: `url('/right.jpg')`,
+        backgroundImage: {
+          xs: `url('/bolt_mob.png')`,
+          md: `linear-gradient(rgba(15, 15, 16, 0.35), rgba(15, 15, 16, 0.45)), url('/right.jpg')`,
+        },
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
-        backgroundAttachment: 'fixed',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: {
+          xs: 'scroll',
+          md: 'fixed',
+        },
         color: '#FFFFFF',
         position: 'relative',
         height: '100dvh',
@@ -32,16 +38,25 @@ export default function HeroSection() {
         fontFamily: '"Nunito Sans", sans-serif',
       }}
     >
-      <Container maxWidth="lg" sx={{ px: { xs: 3, sm: 5, md: 8 } }}>
-        <Box sx={{ maxWidth: '850px', ml: { md: -5 } }}>
+      <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 3 } }}>
+        <Box
+          sx={{
+            maxWidth: '850px',
+            mx: { xs: 'auto', md: 0 },
+            textAlign: { xs: 'center', md: 'left' },
+            transform: 'translateY(-80px)',
+          }}
+        >
           {/* White Accent Line */}
           <Box
             sx={{
+              display: { xs: 'none', md: 'block' },
               width: '70px',
               height: '3px',
               backgroundColor: '#FFFFFF',
               mb: 4,
               borderRadius: '2px',
+              mx: { xs: 'auto', md: 0 },
             }}
           />
 
@@ -49,12 +64,13 @@ export default function HeroSection() {
           <Typography
             variant="h1"
             sx={{
-              fontSize: { xs: '2.2rem', sm: '2.8rem', md: '3.2rem' },
+              fontSize: { xs: '30px', sm: '2.8rem', md: '3.2rem' },
               fontWeight: 800,
               color: '#FFFFFF',
               lineHeight: 1.15,
-              mb: 3,
+              mb: { xs: '14px', md: 3 },
               fontFamily: '"Nunito Sans", sans-serif',
+              textAlign: { xs: 'center', md: 'left' },
             }}
           >
             Welcome to Bolt Motorcycles,
@@ -71,17 +87,29 @@ export default function HeroSection() {
               color: '#FFFFFF',
               fontSize: { xs: '1rem', md: '1.15rem' },
               lineHeight: 1.7,
-              mb: 5,
+              mb: { xs: '20px', md: 5 },
               maxWidth: '680px',
               fontWeight: 400,
               fontFamily: '"Nunito Sans", sans-serif',
+              mx: { xs: 'auto', md: 0 },
+              textAlign: { xs: 'center', md: 'left' },
             }}
           >
             Experience legendary motorcycling sales, certified express service bays, genuine Royal Enfield apparel & accessories, and easy low-ROI finance.
           </Typography>
 
           {/* Rounded Pill CTA Buttons */}
-          <Stack direction="row" spacing={2} sx={{ flexWrap: 'wrap', gap: 2 }}>
+          <Stack
+            direction="row"
+            spacing={{ xs: 1.5, sm: 2 }}
+            sx={{
+              flexWrap: 'nowrap',
+              width: '100%',
+              maxWidth: { xs: '450px', md: '100%' },
+              mx: { xs: 'auto', md: 0 },
+              justifyContent: { xs: 'center', md: 'flex-start' },
+            }}
+          >
             {/* Primary White Pill Button */}
             <Button
               component="a"
@@ -90,13 +118,16 @@ export default function HeroSection() {
                 backgroundColor: '#FFFFFF',
                 color: '#000000',
                 borderRadius: '50px',
-                px: 4,
-                py: 1.6,
-                fontSize: '0.95rem',
+                px: { xs: 2, sm: 4 },
+                py: { xs: 1.2, sm: 1.6 },
+                fontSize: { xs: '0.85rem', sm: '0.95rem' },
                 fontWeight: 800,
                 textTransform: 'none',
                 fontFamily: '"Nunito Sans", sans-serif',
+                whiteSpace: 'nowrap',
                 boxShadow: '0 4px 15px rgba(255, 255, 255, 0.15)',
+                flex: { xs: 1, sm: 'initial' },
+                textAlign: 'center',
                 '&:hover': {
                   backgroundColor: '#E2E8F0',
                   color: '#000000',
@@ -116,13 +147,16 @@ export default function HeroSection() {
                 color: '#FFFFFF',
                 border: '1px solid rgba(255, 255, 255, 0.25)',
                 borderRadius: '50px',
-                px: 4,
-                py: 1.6,
-                fontSize: '0.95rem',
+                px: { xs: 2, sm: 4 },
+                py: { xs: 1.2, sm: 1.6 },
+                fontSize: { xs: '0.85rem', sm: '0.95rem' },
                 fontWeight: 800,
                 textTransform: 'none',
                 fontFamily: '"Nunito Sans", sans-serif',
+                whiteSpace: 'nowrap',
                 backdropFilter: 'blur(8px)',
+                flex: { xs: 1, sm: 'initial' },
+                textAlign: 'center',
                 '&:hover': {
                   backgroundColor: 'rgba(255, 255, 255, 0.22)',
                   borderColor: '#FFFFFF',

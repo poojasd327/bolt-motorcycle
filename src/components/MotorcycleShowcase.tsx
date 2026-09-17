@@ -64,11 +64,10 @@ export default function MotorcycleShowcase() {
         py: { xs: 8, md: 12 },
         backgroundColor: '#FFFFFF',
         position: 'relative',
-        borderBottom: '1px solid #E2E8F0',
         fontFamily: '"Nunito Sans", sans-serif',
       }}
     >
-      <Container maxWidth="lg" sx={{ px: { xs: 3, sm: 5, md: 8 } }}>
+      <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 3 } }}>
         {/* Top Header Section */}
         <Box
           sx={{
@@ -168,11 +167,11 @@ export default function MotorcycleShowcase() {
           ref={scrollContainerRef}
           sx={{
             display: 'flex',
-            gap: 2.5,
+            gap: { xs: 0, sm: 2.5 },
             overflowX: 'auto',
             scrollSnapType: 'x mandatory',
             py: 1.5,
-            px: 0.5,
+            px: 0,
             scrollBehavior: 'smooth',
             '&::-webkit-scrollbar': {
               display: 'none',
@@ -185,9 +184,11 @@ export default function MotorcycleShowcase() {
             <Box
               key={bike.id}
               sx={{
-                flex: '0 0 auto',
-                width: { xs: '290px', sm: '320px', md: 'calc((100% - 40px) / 3)' },
+                flex: { xs: '0 0 100%', sm: '0 0 auto' },
+                width: { xs: '100%', sm: '320px', md: 'calc((100% - 40px) / 3)' },
+                boxSizing: 'border-box',
                 scrollSnapAlign: 'start',
+                scrollSnapStop: 'always',
                 display: 'flex',
                 flexDirection: 'column',
               }}

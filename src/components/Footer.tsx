@@ -16,11 +16,10 @@ export default function Footer() {
         backgroundColor: '#F8FAFC',
         pt: 8,
         pb: 4,
-        borderTop: '1px solid #E2E8F0',
         color: '#475569',
       }}
     >
-      <Container maxWidth="lg" sx={{ px: { xs: 3, sm: 5, md: 8 } }}>
+      <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 3 } }}>
         <Grid container spacing={5} sx={{ mb: 6 }}>
           {/* Brand Col */}
           <Grid size={{ xs: 12, md: 4 }}>

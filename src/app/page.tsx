@@ -12,7 +12,6 @@ import EmiCalculator from '@/components/EmiCalculator';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
-import FloatingActions from '@/components/FloatingActions';
 
 export default function Home() {
   return (
@@ -46,9 +45,6 @@ export default function Home() {
 
       {/* Footer */}
       <Footer />
-
-      {/* Floating Action Buttons */}
-      <FloatingActions />
     </Box>
   );
 }

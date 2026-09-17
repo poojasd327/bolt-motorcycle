@@ -47,7 +47,7 @@ export default function ContactSection() {
         fontFamily: '"Nunito Sans", sans-serif',
       }}
     >
-      <Container maxWidth="lg" sx={{ px: { xs: 3, sm: 5, md: 8 }, mx: 'auto' }}>
+      <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 3 }, mx: 'auto' }}>
         <Grid container spacing={{ xs: 6, lg: 8 }} sx={{ alignItems: 'stretch' }}>
           {/* Left Side: Clean Minimalist Contact Form */}
           <Grid size={{ xs: 12, md: 6.5, lg: 6 }}>

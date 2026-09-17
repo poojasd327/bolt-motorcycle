@@ -56,13 +56,11 @@ export default function EmiCalculator() {
       sx={{
         py: { xs: 8, md: 12 },
         backgroundColor: '#FFFFFF',
-        borderTop: '1px solid #E2E8F0',
-        borderBottom: '1px solid #E2E8F0',
         position: 'relative',
         fontFamily: '"Nunito Sans", sans-serif',
       }}
     >
-      <Container maxWidth="lg" sx={{ px: { xs: 3, sm: 5, md: 8 } }}>
+      <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 3 } }}>
         {/* Title & Section Subtitle */}
         <Box sx={{ mb: 6 }}>
           <Chip

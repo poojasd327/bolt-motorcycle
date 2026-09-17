@@ -56,12 +56,12 @@ export default function Navbar() {
           : 'rgba(15, 15, 16, 0.88)',
         backdropFilter: 'blur(16px)',
         borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-        boxShadow: scrolled ? '0 4px 20px rgba(0, 0, 0, 0.4)' : 'none',
+        boxShadow: scrolled ? '0 4px 25px rgba(0, 0, 0, 0.5)' : 'none',
         transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
         zIndex: (theme) => theme.zIndex.drawer + 1,
       }}
     >
-      <Container maxWidth="lg" sx={{ px: { xs: 3, sm: 5, md: 8 } }}>
+      <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 3 } }}>
         <Toolbar disableGutters sx={{ minHeight: { xs: 70, md: 80 }, justifyContent: 'space-between' }}>
           {/* Logo & Dealership Badge */}
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
@@ -70,14 +70,18 @@ export default function Navbar() {
                 width: 42,
                 height: 42,
                 borderRadius: '12px',
-                background: 'linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%)',
+                background: 'linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 100%)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                boxShadow: '0 4px 15px rgba(211, 47, 47, 0.3)',
+                boxShadow: '0 4px 18px rgba(255, 255, 255, 0.2)',
+                transition: 'transform 0.3s ease',
+                '&:hover': {
+                  transform: 'scale(1.05)',
+                },
               }}
             >
-              <FlashOnIcon sx={{ color: '#FFFFFF', fontSize: 26 }} />
+              <FlashOnIcon sx={{ color: '#09090B', fontSize: 25 }} />
             </Box>
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -90,16 +94,16 @@ export default function Navbar() {
                     letterSpacing: '0.04em',
                     color: '#FFFFFF',
                     textDecoration: 'none',
-                    fontSize: { xs: '1.2rem', md: '1.4rem' },
+                    fontSize: { xs: '1.15rem', md: '1.35rem' },
                     textTransform: 'uppercase',
                     fontFamily: '"Nunito Sans", sans-serif',
                   }}
                 >
-                  BOLT <Box component="span" sx={{ color: '#D32F2F' }}>MOTORCYCLES</Box>
+                  BOLT <Box component="span" sx={{ color: '#A1A1AA', fontWeight: 700 }}>MOTORCYCLES</Box>
                 </Typography>
               </Box>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                <VerifiedIcon sx={{ color: '#D32F2F', fontSize: 13 }} />
+              <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 0.6 }}>
+                <VerifiedIcon sx={{ color: '#38BDF8', fontSize: 14 }} />
                 <Typography
                   variant="caption"
                   sx={{
@@ -143,7 +147,8 @@ export default function Navbar() {
                     height: '2px',
                     bottom: '-4px',
                     left: '0',
-                    backgroundColor: '#FFFFFF',
+                    backgroundColor: '#EF4444',
+                    borderRadius: '1px',
                     transition: 'width 0.25s ease-in-out',
                   },
                   '&:hover::after': {
@@ -163,48 +168,47 @@ export default function Navbar() {
               component="a"
               href={`https://wa.me/${dealershipData.whatsapp}?text=Hi%20Bolt%20Motorcycles,%20I%20would%20like%20to%20book%20a%20test%20ride.`}
               target="_blank"
+              startIcon={<TwoWheelerIcon sx={{ fontSize: '1.1rem !important' }} />}
               sx={{
-                px: 3.5,
+                px: 3.2,
                 py: 1.1,
                 fontSize: '0.88rem',
                 fontWeight: 800,
                 fontFamily: '"Nunito Sans", sans-serif',
                 textTransform: 'none',
                 backgroundColor: '#FFFFFF',
-                color: '#000000',
+                color: '#09090B',
                 borderRadius: '50px',
-                boxShadow: '0 4px 15px rgba(255, 255, 255, 0.15)',
+                boxShadow: '0 4px 18px rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease',
                 '&:hover': {
-                  backgroundColor: '#E2E8F0',
+                  backgroundColor: '#F4F4F5',
                   color: '#000000',
+                  transform: 'translateY(-1px)',
+                  boxShadow: '0 6px 22px rgba(255, 255, 255, 0.3)',
                 },
               }}
             >
-              Contact
+              Book Test Ride
             </Button>
           </Box>
 
-          {/* Mobile Hamburger */}
+          {/* Mobile Actions & Menu */}
           <Box sx={{ display: { xs: 'flex', md: 'none' }, gap: 1, alignItems: 'center' }}>
             <IconButton
-              component="a"
-              href={`tel:${dealershipData.phoneRaw}`}
-              sx={{
-                color: '#D32F2F',
-                border: '1px solid rgba(211, 47, 47, 0.3)',
-                p: 1,
-              }}
-              aria-label="Call Dealership"
-            >
-              <PhoneIcon fontSize="small" />
-            </IconButton>
-
-            <IconButton
-              color="inherit"
               aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
-              sx={{ color: '#0F172A', ml: 0.5 }}
+              sx={{
+                color: '#FFFFFF',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                backgroundColor: 'rgba(255, 255, 255, 0.06)',
+                p: 0.9,
+                borderRadius: '10px',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.15)',
+                },
+              }}
             >
               <MenuIcon />
             </IconButton>
@@ -220,20 +224,41 @@ export default function Navbar() {
         slotProps={{
           paper: {
             sx: {
-              width: 280,
+              width: 290,
               backgroundColor: '#FFFFFF',
               backgroundImage: 'none',
               borderLeft: '1px solid #E2E8F0',
-              p: 2.5,
+              p: 3,
             },
           },
         }}
       >
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
-          <Typography variant="h6" sx={{ fontWeight: 800, color: '#D32F2F' }}>
-            BOLT RE
-          </Typography>
-          <IconButton onClick={handleDrawerToggle} sx={{ color: '#0F172A' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.2 }}>
+            <Box
+              sx={{
+                width: 36,
+                height: 36,
+                borderRadius: '10px',
+                background: '#09090B',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <FlashOnIcon sx={{ color: '#FFFFFF', fontSize: 20 }} />
+            </Box>
+            <Box>
+              <Typography variant="h6" sx={{ fontWeight: 900, color: '#09090B', fontSize: '1.05rem', lineHeight: 1.2 }}>
+                BOLT <Box component="span" sx={{ color: '#71717A', fontWeight: 700 }}>RE</Box>
+              </Typography>
+              <Typography variant="caption" sx={{ color: '#71717A', fontSize: '0.65rem', fontWeight: 700 }}>
+                HYDERABAD
+              </Typography>
+            </Box>
+          </Box>
+
+          <IconButton onClick={handleDrawerToggle} sx={{ color: '#09090B' }}>
             <CloseIcon />
           </IconButton>
         </Box>
@@ -246,27 +271,29 @@ export default function Navbar() {
               href={item.href}
               onClick={handleDrawerToggle}
               sx={{
-                borderRadius: 2,
-                mb: 1,
-                color: '#0F172A',
+                borderRadius: 2.5,
+                mb: 0.8,
+                color: '#09090B',
                 textDecoration: 'none',
+                transition: 'all 0.2s ease',
                 '&:hover': {
-                  backgroundColor: 'rgba(211, 47, 47, 0.08)',
-                  color: '#D32F2F',
+                  backgroundColor: '#F4F4F5',
+                  color: '#000000',
+                  pl: 2.5,
                 },
               }}
             >
               <ListItemText
                 primary={item.label}
                 slotProps={{
-                  primary: { sx: { fontWeight: 700 } },
+                  primary: { sx: { fontWeight: 700, fontSize: '0.95rem' } },
                 }}
               />
             </ListItem>
           ))}
         </List>
 
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.8, mt: 'auto' }}>
           <Button
             variant="contained"
             fullWidth
@@ -276,8 +303,14 @@ export default function Navbar() {
             onClick={handleDrawerToggle}
             startIcon={<TwoWheelerIcon />}
             sx={{
-              background: 'linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%)',
+              backgroundColor: '#09090B',
               color: '#FFFFFF',
+              borderRadius: '50px',
+              py: 1.3,
+              fontWeight: 800,
+              '&:hover': {
+                backgroundColor: '#27272A',
+              },
             }}
           >
             Book Test Ride
@@ -289,7 +322,17 @@ export default function Navbar() {
             component="a"
             href={`tel:${dealershipData.phoneRaw}`}
             startIcon={<PhoneIcon />}
-            sx={{ borderColor: '#D32F2F', color: '#D32F2F' }}
+            sx={{
+              borderColor: '#09090B',
+              color: '#09090B',
+              borderRadius: '50px',
+              py: 1.3,
+              fontWeight: 700,
+              '&:hover': {
+                borderColor: '#27272A',
+                backgroundColor: '#F4F4F5',
+              },
+            }}
           >
             Call +91 63091 25551
           </Button>
@@ -298,3 +341,4 @@ export default function Navbar() {
     </AppBar>
   );
 }
+
